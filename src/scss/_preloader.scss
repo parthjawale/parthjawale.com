@@ -1,0 +1,45 @@
+.preload-screen {
+  background-color: $secondary;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  .preloader {
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    border: 1px solid transparent;
+    border-top: 1px solid #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transition: opacity 0.4s ease-out;
+    transition: opacity 0.4s ease-out;
+    margin: auto;
+    animation: 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite preload;
+    -webkit-animation: 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite preload;
+    -moz-animation: 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite preload;
+  }
+}
+@-webkit-keyframes preload {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes preload {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
