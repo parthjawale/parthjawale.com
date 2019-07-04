@@ -88,10 +88,8 @@ export default {
     },
     navLinkClicked(to) {
       if (screen.width < 768) {
+        this.$router.push(to);
         this.navToggleClicked();
-        setTimeout(() => {
-          this.$router.push(to);
-        }, 800);
       } else {
         this.$router.push(to);
       }
@@ -101,14 +99,12 @@ export default {
         this.listItemsClass = "link-hover";
         this.footerClass = "footer-social d-none-desktop opac-0";
         setTimeout(() => {
+          this.$router.push(to);
           this.labelClass = "nav-toggle d-none-desktop";
           this.checkboxVal = false;
           this.linksClass = "links";
           this.navbarClass = "navbar b-primary wow fadeIn";
         }, 500);
-        setTimeout(() => {
-          this.$router.push(to);
-        }, 800);
       } else {
         this.$router.push(to);
       }

@@ -16,25 +16,63 @@ $secondary: rgb(241, 50, 50);
 .wow {
   visibility: hidden;
 }
+
+// Backmask - Clip Path
+// .backmask {
+//   background: $backcolor;
+//   position: fixed;
+//   top: 0;
+//   right: 0;
+//   z-index: 1;
+//   bottom: 0;
+//   left: 0;
+//   -webkit-clip-path: circle(0% at 50% 50%);
+//   clip-path: circle(0% at 50% 50%);
+//   transition: clip-path 1.5s cubic-bezier(0.86, 0, 0.07, 1),
+//     -webkit-clip-path 1.5s cubic-bezier(0.86, 0, 0.07, 1);
+// }
+// body.loaded {
+//   .backmask {
+//     -webkit-clip-path: circle(100% at 50% 50%);
+//     clip-path: circle(100% at 50% 50%);
+//   }
+// }
+
+// Backmask - Border-Radius
+
 .backmask {
   background: $backcolor;
   position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 1;
-  bottom: 0;
-  left: 0;
-  -webkit-clip-path: circle(0% at 50% 50%);
-  clip-path: circle(0% at 50% 50%);
-  transition: clip-path 1.5s cubic-bezier(0.86, 0, 0.07, 1),
-    -webkit-clip-path 1.5s cubic-bezier(0.86, 0, 0.07, 1);
+  top: 50%;
+  left: 50%;
+  width: 0px;
+  border-radius: 50%;
+  height: 0px;
+  -webkit-transition: width 1.5s cubic-bezier(0.86, 0, 0.07, 1),
+    height 1.5s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: width 1.5s cubic-bezier(0.86, 0, 0.07, 1),
+    height 1.5s cubic-bezier(0.86, 0, 0.07, 1);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
-body.loaded {
-  .backmask {
-    -webkit-clip-path: circle(100% at 50% 50%);
-    clip-path: circle(100% at 50% 50%);
+@media screen and (max-width: 768px) {
+  body.loaded {
+    .backmask {
+      width: 200vh;
+      height: 200vh;
+    }
   }
 }
+
+@media screen and (min-width: 768px) {
+  body.loaded {
+    .backmask {
+      width: 200vw;
+      height: 200vw;
+    }
+  }
+}
+
 @media screen and (min-width: 768px) {
   .full-page-desktop {
     width: 100vw;
@@ -85,6 +123,7 @@ body.loaded {
         left: 0;
         height: 100%;
         top: 50%;
+        -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
         background-color: rgb(202, 202, 133);
         width: 10px;

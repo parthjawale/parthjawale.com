@@ -18,7 +18,7 @@ export default {
   data() {
     return {
       preloadDone: false,
-      backmaskClass: "backmask full-page b-primary"
+      backmaskClass: "backmask b-primary"
     };
   },
   watch: {
