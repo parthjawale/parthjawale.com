@@ -2,7 +2,7 @@
   <div class="full-page preload-screen" v-show="!preloadDone">
     <div :class="backmaskClass" v-if="hideMask"></div>
     <transition name="fade">
-      <div class="preloader" v-if="!loaded"></div>
+      <div :class="preloaderClass" v-if="!loaded"></div>
     </transition>
   </div>
 </template>
@@ -10,6 +10,7 @@
 <script>
 import Backmask from "@/components/Globals/Backmask";
 import { bus } from "@/main";
+import { setTimeout } from "timers";
 export default {
   props: ["loaded", "hideMask"],
   components: {
@@ -18,7 +19,9 @@ export default {
   data() {
     return {
       preloadDone: false,
-      backmaskClass: "backmask b-primary"
+      // loaded: false,
+      backmaskClass: "backmask b-primary",
+      preloaderClass: "preloader"
     };
   },
   watch: {
@@ -33,8 +36,10 @@ export default {
           } else {
             document.body.classList += "loaded";
           }
-          this.backmaskClass = bus.$emit("backmask-clip-start");
         }, 700);
+        setTimeout(function() {
+          this.backmaskClass = bus.$emit("backmask-clip-start");
+        }, 900);
       }
     }
   }

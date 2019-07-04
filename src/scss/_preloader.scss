@@ -22,6 +22,10 @@
     -webkit-animation: 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite preload;
     -moz-animation: 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite preload;
   }
+  .stop-animation {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+  }
 }
 @-webkit-keyframes preload {
   from {
