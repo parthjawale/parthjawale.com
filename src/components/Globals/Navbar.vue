@@ -17,6 +17,11 @@
     </label>
     <div :class="linksClass">
       <ul>
+        <li :class="[listItemsClass, 'd-none-desktop']">
+          <a @click="navLinkClicked('/')">
+            <span data-hover="Home">Home</span>
+          </a>
+        </li>
         <li :class="listItemsClass">
           <a @click="navLinkClicked('/about')">
             <span data-hover="About">About</span>
@@ -32,12 +37,12 @@
     <div :class="footerClass">
       <div class="footer-row">
         <ul>
-          <li class="link-hover">
+          <li>
             <a href="https://www.linkedin.com/in/parth-jawale/" target="_blank">
               <span data-hover="Linkedin">LinkedIn</span>
             </a>
           </li>
-          <li class="link-hover">
+          <li>
             <a href="https://www.facebook.com/pjawale.007" target="_blank">
               <span data-hover="Facebook">Facebook</span>
             </a>

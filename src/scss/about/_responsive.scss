@@ -1,0 +1,17 @@
+@media screen and (max-width: 768px) {
+  .about-page {
+    padding-top: 6rem;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    .name {
+      h1 {
+        font-size: 3rem;
+        color: $primary;
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+}

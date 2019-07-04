@@ -25,12 +25,17 @@
     font-size: 0.9rem;
     font-weight: 600;
     text-decoration: none;
+    cursor: pointer;
   }
   .home-link {
     padding: 1rem 2rem;
     width: 30%;
     a {
       color: inherit;
+      transition: color 0.7s;
+      &:hover {
+        color: $primary;
+      }
     }
   }
   .links {
@@ -179,9 +184,12 @@
             -webkit-transition: all 0.6s;
             transition: all 0.6s;
           }
+          &:nth-child(3) {
+            -webkit-transition: all 0.8s;
+            transition: all 0.8s;
+          }
           a {
             outline: none;
-            // font-family: "Montserrat", sans-serif;
             font-family: "DM Serif Display", sans-serif;
             font-size: 3.4rem;
             font-weight: 600;
@@ -235,6 +243,11 @@
         padding: 1rem;
         li {
           padding: 0rem 2rem;
+          a {
+            color: #fff;
+            text-decoration: none;
+            outline: none;
+          }
         }
       }
       @media screen and (max-width: 768px) {

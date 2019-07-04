@@ -1,7 +1,10 @@
 <template>
-  <div class="about-page b-primary">
+  <div class="about-page b-primary pb-5-desktop px-2-mobile">
     <div class="name wow fadeInUp" data-wow-delay="1s">
-      <h1 class="heading-super font-secondary">Hello, I'm Parth Jawale.</h1>
+      <h1 class="heading-super font-secondary">
+        Hello, I'm
+        <span>Parth Jawale.</span>
+      </h1>
     </div>
     <div class="about-me-text text-common wow fadeIn" data-wow-delay="2s">
       <p>

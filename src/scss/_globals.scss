@@ -230,37 +230,181 @@ body.o-hidden {
   opacity: 1 !important;
 }
 
+// Paddings
+
+.pb-0 {
+  padding-bottom: 0rem;
+}
+.pb-1 {
+  padding-bottom: 1rem;
+}
+.pb-2 {
+  padding-bottom: 2rem;
+}
+.pb-3 {
+  padding-bottom: 3rem;
+}
+.pb-4 {
+  padding-bottom: 4rem;
+}
+.pb-5 {
+  padding-bottom: 5rem;
+}
+
+.px-0 {
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
+.px-1 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.px-2 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.px-3 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+.px-4 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+.px-5 {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .px-0-desktop {
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+  .px-1-desktop {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .px-2-desktop {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .px-3-desktop {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .px-4-desktop {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  .px-5-desktop {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .px-0-mobile {
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+  .px-1-mobile {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .px-2-mobile {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .px-3-mobile {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .px-4-mobile {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  .px-5-mobile {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .pb-0-desktop {
+    padding-bottom: 0rem;
+  }
+  .pb-1-desktop {
+    padding-bottom: 1rem;
+  }
+  .pb-2-desktop {
+    padding-bottom: 2rem;
+  }
+  .pb-3-desktop {
+    padding-bottom: 3rem;
+  }
+  .pb-4-desktop {
+    padding-bottom: 4rem;
+  }
+  .pb-5-desktop {
+    padding-bottom: 5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pb-0-mobile {
+    padding-bottom: 0rem;
+  }
+  .pb-1-mobile {
+    padding-bottom: 1rem;
+  }
+  .pb-2-mobile {
+    padding-bottom: 2rem;
+  }
+  .pb-3-mobile {
+    padding-bottom: 3rem;
+  }
+  .pb-4-mobile {
+    padding-bottom: 4rem;
+  }
+  .pb-5-mobile {
+    padding-bottom: 5rem;
+  }
+}
+
 // Links
-.link-hover a {
-  overflow: hidden;
-  position: relative;
-  display: inline-block;
-  padding: 0 4px;
-}
+@media screen and (min-width: 768px) {
+  .link-hover a {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    padding: 0 4px;
+  }
 
-.link-hover a span {
-  position: relative;
-  display: inline-block;
-  color: #fff;
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: -webkit-transform 0.3s;
-  transition: transform 0.3s;
-  transition: transform 0.3s, -webkit-transform 0.3s;
-}
+  .link-hover a span {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+  }
 
-.link-hover a span::before {
-  position: absolute;
-  color: $primary;
-  top: 100%;
-  content: attr(data-hover);
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-}
+  .link-hover a span::before {
+    position: absolute;
+    color: $primary;
+    top: 100%;
+    content: attr(data-hover);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 
-.link-hover a:hover span,
-.link-hover a:focus span {
-  -webkit-transform: translateY(-100%);
-  transform: translateY(-100%);
+  .link-hover a:hover span,
+  .link-hover a:focus span {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
 }
 
 // Transitions
