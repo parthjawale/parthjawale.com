@@ -1,4 +1,4 @@
-# portfolio-sp
+# Portfolio
 
 ## Project setup
 ```
