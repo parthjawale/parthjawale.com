@@ -1,0 +1,11 @@
+.about-page {
+  padding-top: 6rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  height: 100%;
+  width: 100%;
+  .name {
+    color: $primary;
+    font-size: 5rem;
+  }
+}

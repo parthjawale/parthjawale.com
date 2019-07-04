@@ -2,10 +2,15 @@
   <nav :class="navbarClass" data-wow-duration="0.2s" data-wow-delay="0.5s">
     <div class="home-link">
       <h3>
-        <a href="#">Parth Jawale</a>
+        <a @click="homeLinkClicked('/')" to="/">Parth Jawale</a>
       </h3>
     </div>
-    <input type="checkbox" id="nav-toggle-checkbox" name="nav-toggle-checkbox" />
+    <input
+      type="checkbox"
+      v-model="checkboxVal"
+      id="nav-toggle-checkbox"
+      name="nav-toggle-checkbox"
+    />
     <label :class="labelClass" for="nav-toggle-checkbox" @click="navToggleClicked">
       <span class="nav-toggle-text">Menu</span>
       <span class="hamburger"></span>
@@ -13,12 +18,12 @@
     <div :class="linksClass">
       <ul>
         <li :class="listItemsClass">
-          <a>
+          <a @click="navLinkClicked('/about')">
             <span data-hover="About">About</span>
           </a>
         </li>
         <li :class="listItemsClass">
-          <a>
+          <a @click="navLinkClicked('/contact')">
             <span data-hover="Contact">Contact</span>
           </a>
         </li>
@@ -51,6 +56,7 @@ export default {
       navbarClass: "navbar b-primary wow fadeIn",
       linksClass: "links",
       listItemsClass: "link-hover",
+      checkboxVal: false,
       footerClass: "footer-social d-none-desktop opac-0-mobile"
     };
   },
@@ -70,8 +76,36 @@ export default {
         setTimeout(() => {
           this.labelClass = "nav-toggle d-none-desktop";
           this.linksClass = "links";
+          this.checkboxVal = false;
           this.navbarClass = "navbar b-primary wow fadeIn";
         }, 500);
+      }
+    },
+    navLinkClicked(to) {
+      if (screen.width < 768) {
+        this.navToggleClicked();
+        setTimeout(() => {
+          this.$router.push(to);
+        }, 800);
+      } else {
+        this.$router.push(to);
+      }
+    },
+    homeLinkClicked(to) {
+      if (screen.width < 768) {
+        this.listItemsClass = "link-hover";
+        this.footerClass = "footer-social d-none-desktop opac-0";
+        setTimeout(() => {
+          this.labelClass = "nav-toggle d-none-desktop";
+          this.checkboxVal = false;
+          this.linksClass = "links";
+          this.navbarClass = "navbar b-primary wow fadeIn";
+        }, 500);
+        setTimeout(() => {
+          this.$router.push(to);
+        }, 800);
+      } else {
+        this.$router.push(to);
       }
     }
   }

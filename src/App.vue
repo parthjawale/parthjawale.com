@@ -1,9 +1,8 @@
 <template>
   <div id="app">
     <navbar v-show="dataLoaded" />
-    <router-view />
-    <!-- <backmask v-if="!hideMask" :loaded="dataLoaded" /> -->
     <preloader :loaded="dataLoaded" :hideMask="!hideMask" />
+    <layout />
     <mouse />
     <footr v-show="dataLoaded" />
   </div>
@@ -19,6 +18,7 @@ import WOW from "wow.js";
 import Backmask from "@/components/Globals/Backmask";
 import Preloader from "@/components/Globals/Preloader";
 import Navbar from "@/components/Globals/Navbar";
+import Layout from "@/views/Layouts/HomeLayout";
 import Mouse from "@/components/Globals/MousePointer";
 import Footer from "@/components/Globals/Footer";
 
@@ -27,6 +27,7 @@ export default {
     backmask: Backmask,
     preloader: Preloader,
     navbar: Navbar,
+    layout: Layout,
     mouse: Mouse,
     footr: Footer
   },

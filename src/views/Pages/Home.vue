@@ -4,7 +4,7 @@
       <div class="about-me-text">
         <div class="main-heading-wrapper">
           <h2
-            class="heading-super wow fadeInUp"
+            class="heading-super font-primary wow fadeInUp"
             data-wow-duration="0.9s"
             data-wow-delay="1.2s"
           >UX/UI Designer, chocolate and beer lover.</h2>
@@ -27,12 +27,3 @@
     </div>
   </section>
 </template>
-
-<script>
-import { bus } from "@/main";
-export default {
-  created() {
-    bus.$emit("componentLoaded");
-  }
-};
-</script>

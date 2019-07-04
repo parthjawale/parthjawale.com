@@ -29,7 +29,7 @@ export default {
         }, 1500);
         setTimeout(() => {
           if (screen.width > 768) {
-            document.body.classList += "o-hidden loaded";
+            document.body.classList += "loaded";
           } else {
             document.body.classList += "loaded";
           }

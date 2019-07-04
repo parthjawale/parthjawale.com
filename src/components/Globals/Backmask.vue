@@ -15,7 +15,7 @@ export default {
     loaded(data) {
       if (data) {
         // setTimeout(() => {
-        document.body.classList += "o-hidden loaded";
+        document.body.classList += "loaded";
         this.backmaskClass = bus.$emit("backmask-clip-start");
         // }, 700);
       }
