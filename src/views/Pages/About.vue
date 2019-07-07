@@ -1,12 +1,12 @@
 <template>
-  <div class="about-page b-primary pb-5-desktop px-2-mobile">
-    <div class="name wow fadeInUp" data-wow-delay="1s">
+  <div class="about-page b-primary pb-5-desktop px-2-mobile pt-5">
+    <div class="name wow fadeInUp" data-wow-delay="0.5s">
       <h1 class="heading-super font-secondary">
         Hello, I'm
         <span>Parth Jawale.</span>
       </h1>
     </div>
-    <div class="about-me-text text-common wow fadeIn" data-wow-delay="2s">
+    <div class="about-me-text text-common wow fadeIn" data-wow-delay="1.2s">
       <p>
         Lorem mollit in reprehenderit eiusmod ut sit laborum ad eiusmod ullamco. Laboris nostrud Lorem ut esse. Nostrud ea officia amet sit labore officia dolore occaecat. Aliquip consequat officia nisi ad fugiat exercitation. Elit aute ipsum ut aute. Culpa reprehenderit quis consectetur laborum qui magna fugiat ullamco.
         <br />Adipisicing esse anim ex do laborum qui officia mollit. Consectetur reprehenderit ea qui officia culpa magna. Et duis aute proident sit anim cupidatat esse. Duis laboris anim do cupidatat do eiusmod elit excepteur. Magna velit non cupidatat ipsum eu sunt velit reprehenderit. Tempor mollit adipisicing culpa ea sunt.

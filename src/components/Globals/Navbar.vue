@@ -1,5 +1,5 @@
 <template>
-  <nav :class="navbarClass" data-wow-duration="0.2s" data-wow-delay="0.5s">
+  <nav :class="navbarClass" data-wow-duration="0.2s">
     <div class="home-link">
       <h3>
         <a @click="homeLinkClicked('/')" to="/">Parth Jawale</a>

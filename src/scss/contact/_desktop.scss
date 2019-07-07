@@ -1,0 +1,64 @@
+.contact-me {
+  // padding-top: 6rem;
+  .inputs {
+    .input-group {
+      label,
+      input,
+      textarea {
+        display: block;
+        width: 50%;
+        transition: 0.4s ease;
+      }
+      .input-label {
+        font-size: 1.1rem;
+      }
+      .active {
+        color: $primary;
+      }
+      input,
+      textarea {
+        background: transparent;
+        font-size: 1.8rem;
+        outline: none;
+        border: none;
+        padding: 0.6rem 0;
+        border-radius: 10px;
+        color: white;
+        max-width: 50%;
+        min-width: 50%;
+        font-family: "Montserrat", sans-serif;
+      }
+    }
+  }
+  .email {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    a {
+      position: relative;
+      cursor: pointer;
+      padding: 0.3rem 0.2rem;
+      .email-text {
+        // z-index: 2;
+        transition: all 0.3s ease;
+        position: relative;
+        &:hover {
+          color: $black;
+        }
+      }
+      &:before {
+        transition: all 0.3s ease;
+        content: "";
+        position: absolute;
+        top: 70%;
+        // z-index: 1;
+        height: 5px;
+        width: 100%;
+        background: rgb(202, 202, 133);
+      }
+      &:hover:before {
+        top: 0;
+        height: 100%;
+      }
+    }
+  }
+}

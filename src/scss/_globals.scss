@@ -1,6 +1,9 @@
 $backcolor: #00203fff;
 $primary: #adefd1ff;
 $secondary: rgb(241, 50, 50);
+$white: #fff;
+$black: #000;
+
 @import "preloader";
 @import "mouse";
 * {
@@ -271,8 +274,191 @@ body.o-hidden {
 
 // Paddings
 
+.pt-0 {
+  padding-top: 0rem;
+}
+.pt-1 {
+  padding-top: 1rem;
+}
+.pt-2 {
+  padding-top: 2rem;
+}
+.pt-3 {
+  padding-top: 3rem;
+}
+.pt-4 {
+  padding-top: 4rem;
+}
+.pt-5 {
+  padding-top: 5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .pt-0-desktop {
+    padding-top: 0rem;
+  }
+  .pt-1-desktop {
+    padding-top: 1rem;
+  }
+  .pt-2-desktop {
+    padding-top: 2rem;
+  }
+  .pt-3-desktop {
+    padding-top: 3rem;
+  }
+  .pt-4-desktop {
+    padding-top: 4rem;
+  }
+  .pt-5-desktop {
+    padding-top: 5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pt-0-mobile {
+    padding-top: 0rem;
+  }
+  .pt-1-mobile {
+    padding-top: 1rem;
+  }
+  .pt-2-mobile {
+    padding-top: 2rem;
+  }
+  .pt-3-mobile {
+    padding-top: 3rem;
+  }
+  .pt-4-mobile {
+    padding-top: 4rem;
+  }
+  .pt-5-mobile {
+    padding-top: 5rem;
+  }
+}
+
+.pl-0 {
+  padding-left: 0rem;
+}
+.pl-1 {
+  padding-left: 1rem;
+}
+.pl-2 {
+  padding-left: 2rem;
+}
+.pl-3 {
+  padding-left: 3rem;
+}
+.pl-4 {
+  padding-left: 4rem;
+}
+.pl-5 {
+  padding-left: 5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .pl-0-desktop {
+    padding-left: 0rem;
+  }
+  .pl-1-desktop {
+    padding-left: 1rem;
+  }
+  .pl-2-desktop {
+    padding-left: 2rem;
+  }
+  .pl-3-desktop {
+    padding-left: 3rem;
+  }
+  .pl-4-desktop {
+    padding-left: 4rem;
+  }
+  .pl-5-desktop {
+    padding-left: 5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pl-0-mobile {
+    padding-left: 0rem;
+  }
+  .pl-1-mobile {
+    padding-left: 1rem;
+  }
+  .pl-2-mobile {
+    padding-left: 2rem;
+  }
+  .pl-3-mobile {
+    padding-left: 3rem;
+  }
+  .pl-4-mobile {
+    padding-left: 4rem;
+  }
+  .pl-5-mobile {
+    padding-left: 5rem;
+  }
+}
+
+.pr-0 {
+  padding-right: 0rem;
+}
+.pr-1 {
+  padding-right: 1rem;
+}
+.pr-2 {
+  padding-right: 2rem;
+}
+.pr-3 {
+  padding-right: 3rem;
+}
+.pr-4 {
+  padding-right: 4rem;
+}
+.pr-5 {
+  padding-right: 5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .pr-0-desktop {
+    padding-right: 0rem;
+  }
+  .pr-1-desktop {
+    padding-right: 1rem;
+  }
+  .pr-2-desktop {
+    padding-right: 2rem;
+  }
+  .pr-3-desktop {
+    padding-right: 3rem;
+  }
+  .pr-4-desktop {
+    padding-right: 4rem;
+  }
+  .pr-5-desktop {
+    padding-right: 5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pr-0-mobile {
+    padding-right: 0rem;
+  }
+  .pr-1-mobile {
+    padding-right: 1rem;
+  }
+  .pr-2-mobile {
+    padding-right: 2rem;
+  }
+  .pr-3-mobile {
+    padding-right: 3rem;
+  }
+  .pr-4-mobile {
+    padding-right: 4rem;
+  }
+  .pr-5-mobile {
+    padding-right: 5rem;
+  }
+}
+
 .pb-0 {
-  padding-bottom: 0rem;
+  padding-right: 0rem;
 }
 .pb-1 {
   padding-bottom: 1rem;
@@ -288,6 +474,127 @@ body.o-hidden {
 }
 .pb-5 {
   padding-bottom: 5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .pb-0-desktop {
+    padding-bottom: 0rem;
+  }
+  .pb-1-desktop {
+    padding-bottom: 1rem;
+  }
+  .pb-2-desktop {
+    padding-bottom: 2rem;
+  }
+  .pb-3-desktop {
+    padding-bottom: 3rem;
+  }
+  .pb-4-desktop {
+    padding-bottom: 4rem;
+  }
+  .pb-5-desktop {
+    padding-bottom: 5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pb-0-mobile {
+    padding-bottom: 0rem;
+  }
+  .pb-1-mobile {
+    padding-bottom: 1rem;
+  }
+  .pb-2-mobile {
+    padding-bottom: 2rem;
+  }
+  .pb-3-mobile {
+    padding-bottom: 3rem;
+  }
+  .pb-4-mobile {
+    padding-bottom: 4rem;
+  }
+  .pb-5-mobile {
+    padding-bottom: 5rem;
+  }
+}
+
+.py-0 {
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+}
+.py-1 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.py-2 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.py-3 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.py-4 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.py-5 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .py-0-desktop {
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+  }
+  .py-1-desktop {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .py-2-desktop {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .py-3-desktop {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .py-4-desktop {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .py-5-desktop {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .py-0-mobile {
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+  }
+  .py-1-mobile {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .py-2-mobile {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .py-3-mobile {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .py-4-mobile {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .py-5-mobile {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
 }
 
 .px-0 {
@@ -369,48 +676,6 @@ body.o-hidden {
   }
 }
 
-@media screen and (min-width: 768px) {
-  .pb-0-desktop {
-    padding-bottom: 0rem;
-  }
-  .pb-1-desktop {
-    padding-bottom: 1rem;
-  }
-  .pb-2-desktop {
-    padding-bottom: 2rem;
-  }
-  .pb-3-desktop {
-    padding-bottom: 3rem;
-  }
-  .pb-4-desktop {
-    padding-bottom: 4rem;
-  }
-  .pb-5-desktop {
-    padding-bottom: 5rem;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .pb-0-mobile {
-    padding-bottom: 0rem;
-  }
-  .pb-1-mobile {
-    padding-bottom: 1rem;
-  }
-  .pb-2-mobile {
-    padding-bottom: 2rem;
-  }
-  .pb-3-mobile {
-    padding-bottom: 3rem;
-  }
-  .pb-4-mobile {
-    padding-bottom: 4rem;
-  }
-  .pb-5-mobile {
-    padding-bottom: 5rem;
-  }
-}
-
 // Links
 @media screen and (min-width: 768px) {
   .link-hover a {
@@ -455,4 +720,30 @@ body.o-hidden {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+
+// Buttons
+.btn-large {
+  font-size: 1.4rem;
+  border-radius: 0;
+  z-index: inherit;
+  border: none;
+  outline: none;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1.4rem 2rem;
+  color: $white;
+  position: relative;
+  transition: 0.4s ease;
+  border: 1px solid transparent;
+}
+.btn-large.active {
+  background: transparent;
+  cursor: pointer;
+  border: 1px solid $white;
+  color: $primary;
+  &:hover {
+    background: rgba(255, 255, 255, 0.8);
+    color: $black;
+    border: 1px solid $white;
+  }
 }

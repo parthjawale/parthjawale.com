@@ -6,11 +6,11 @@
           <h2
             class="heading-super font-primary wow fadeInUp"
             data-wow-duration="0.9s"
-            data-wow-delay="1.2s"
+            data-wow-delay="0.6s"
           >UX/UI Designer, chocolate and beer lover.</h2>
         </div>
         <div class="text-common">
-          <p class="wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="1.7s">
+          <p class="wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="1.2s">
             Sunt enim excepteur pariatur nostrud excepteur eiusmod consectetur
             ipsum laboris culpa magna cupidatat occaecat. Duis consectetur
             aliquip tempor aute. Labore pariatur voluptate nulla irure fugiat
@@ -21,7 +21,7 @@
           </p>
         </div>
       </div>
-      <div class="about-me-image wow fadeIn" data-wow-duration="1.4s" data-wow-delay="2.4s">
+      <div class="about-me-image wow fadeIn" data-wow-duration="1.4s" data-wow-delay="2.3s">
         <img src="@/assets/15391528_1549315458417528_641341452658523698_o.jpg" alt />
       </div>
     </div>

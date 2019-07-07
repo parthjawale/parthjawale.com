@@ -47,7 +47,7 @@ export default {
     bus.$on("backmask-clip-start", function() {
       setTimeout(() => {
         new WOW().init();
-      }, 1000);
+      }, 900);
     });
   }
 };

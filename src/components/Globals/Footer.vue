@@ -1,9 +1,5 @@
 <template>
-  <footer
-    class="b-primary wow fadeIn footer d-none-mobile"
-    data-wow-duration="0.2s"
-    data-wow-delay="0.5s"
-  >
+  <footer class="b-primary wow fadeIn footer d-none-mobile" data-wow-duration="0.2s">
     <div class="footer-row">
       <ul>
         <li class="link-hover">

@@ -17,8 +17,5 @@ export default {
 main {
   max-width: 100vw;
   min-height: 100vh;
-  @media screen and(max-width: 768px) {
-    padding-bottom: 3rem;
-  }
 }
 </style>

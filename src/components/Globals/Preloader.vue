@@ -19,7 +19,6 @@ export default {
   data() {
     return {
       preloadDone: false,
-      // loaded: false,
       backmaskClass: "backmask b-primary",
       preloaderClass: "preloader"
     };
@@ -39,7 +38,7 @@ export default {
         }, 700);
         setTimeout(function() {
           this.backmaskClass = bus.$emit("backmask-clip-start");
-        }, 900);
+        }, 700);
       }
     }
   }
