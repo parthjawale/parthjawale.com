@@ -30,12 +30,19 @@
   .home-link {
     padding: 1rem 2rem;
     width: 30%;
-    a {
-      color: inherit;
-      transition: color 0.7s;
-      @media screen and (min-width: 768px) {
-        &:hover {
-          color: $primary;
+    h3 {
+      font-size: 0.9rem;
+      font-size: 0.9rem;
+      text-decoration: none;
+      outline: none;
+      font-family: "Montserrat", sans-serif;
+      a {
+        color: inherit;
+        transition: color 0.7s;
+        @media screen and (min-width: 768px) {
+          &:hover {
+            color: $primary;
+          }
         }
       }
     }
@@ -72,6 +79,8 @@
     .home-link {
       z-index: 5;
       width: 60%;
+      padding: 1rem 0rem;
+      padding-left: 2rem;
     }
     .nav-toggle {
       margin: 0 2rem;
@@ -140,6 +149,7 @@
     .links {
       position: fixed;
       z-index: 4;
+      pointer-events: none;
       width: 100vw;
       height: 100vh;
       padding: 0 0.5rem;
@@ -190,9 +200,13 @@
             -webkit-transition: all 0.8s;
             transition: all 0.8s;
           }
+          &:nth-child(4) {
+            -webkit-transition: all 1s;
+            transition: all 1s;
+          }
           a {
             outline: none;
-            font-family: "DM Serif Display", sans-serif;
+            font-family: "Rufina", sans-serif;
             font-size: 2.5rem;
             font-weight: 600;
             text-decoration: none;
@@ -202,6 +216,7 @@
     }
     .opened-nav {
       opacity: 1;
+      pointer-events: all;
     }
     li.link-animation {
       opacity: 1 !important;

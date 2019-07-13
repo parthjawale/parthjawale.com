@@ -3,6 +3,7 @@
     <div class="home-link">
       <h3>
         <a @click="homeLinkClicked('/')" to="/">Parth Jawale</a>
+        | {{$route.name}}
       </h3>
     </div>
     <input
@@ -25,6 +26,11 @@
         <li :class="listItemsClass">
           <a @click="navLinkClicked('/about')">
             <span data-hover="About">About</span>
+          </a>
+        </li>
+        <li :class="listItemsClass">
+          <a @click="navLinkClicked('/work')">
+            <span data-hover="Work">Work</span>
           </a>
         </li>
         <li :class="listItemsClass">
@@ -58,7 +64,7 @@ export default {
   data: () => {
     return {
       labelClass: "nav-toggle d-none-desktop",
-      navbarClass: "navbar b-primary wow fadeIn",
+      navbarClass: "navbar b-transparent wow fadeIn",
       linksClass: "links",
       listItemsClass: "link-hover",
       checkboxVal: false,
@@ -72,6 +78,7 @@ export default {
         this.linksClass += " opened-nav";
         this.navbarClass += " navbar-open-nav";
         setTimeout(() => {
+          document.getElementsByTagName("html")[0].classList.add("nav-open");
           this.listItemsClass += " link-animation";
           this.footerClass = "footer-social d-none-desktop";
         }, 500);
@@ -81,8 +88,9 @@ export default {
         setTimeout(() => {
           this.labelClass = "nav-toggle d-none-desktop";
           this.linksClass = "links";
+          document.getElementsByTagName("html")[0].classList.remove("nav-open");
           this.checkboxVal = false;
-          this.navbarClass = "navbar b-primary wow fadeIn";
+          this.navbarClass = "navbar b-transparent wow fadeIn";
         }, 500);
       }
     },
@@ -98,12 +106,13 @@ export default {
       if (screen.width < 768) {
         this.listItemsClass = "link-hover";
         this.footerClass = "footer-social d-none-desktop opac-0";
+        document.getElementsByTagName("html")[0].classList.remove("nav-open");
         setTimeout(() => {
           this.$router.push(to);
           this.labelClass = "nav-toggle d-none-desktop";
           this.checkboxVal = false;
           this.linksClass = "links";
-          this.navbarClass = "navbar b-primary wow fadeIn";
+          this.navbarClass = "navbar b-transparent wow fadeIn";
         }, 500);
       } else {
         this.$router.push(to);

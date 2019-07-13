@@ -1,5 +1,5 @@
 <template>
-  <section id="home-page" class="full-page-desktop b-primary content-wrapper">
+  <section id="home-page" class="full-page-desktop b-primary content-wrapper pb-5-mobile">
     <div class="about-me">
       <div class="about-me-text">
         <div class="main-heading-wrapper">
@@ -11,13 +11,28 @@
         </div>
         <div class="text-common">
           <p class="wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="1.2s">
-            Sunt enim excepteur pariatur nostrud excepteur eiusmod consectetur
-            ipsum laboris culpa magna cupidatat occaecat. Duis consectetur
-            aliquip tempor aute. Labore pariatur voluptate nulla irure fugiat
-            consectetur ad ex aliquip. Amet elit mollit enim do quis aute
-            officia minim qui est id sit. Irure tempor aliquip deserunt
-            aliquip velit laboris enim elit consectetur ea. Eiusmod eiusmod ut
-            sit eu consequat ex dolore cillum esse mollit id fugiat.
+            Hello, I'm Parth Jawale, a Final Year engineering student studying in Manipal University, Jaipur.
+            I am a web developer with extensive experience, obsessed with transforming the digital space into a more easily accessible and alluring hangout.
+            <br />
+            <br />Co-Founder at
+            <a class="text-link-wrapper" href="https://mext.in" target="_blank">
+              <span class="text-link">Mext</span>
+            </a>, Technical Lead at
+            <a
+              href="https://gramiksha.in"
+              class="text-link-wrapper"
+              target="blank"
+            >
+              <span class="text-link">Gramiksha</span>
+            </a>.
+            <br />
+            <br />
+            <router-link tag="a" class="text-link-wrapper" to="/about">
+              <span class="text-link">Get acquainted</span>
+            </router-link>&nbsp;&nbsp;with me, or head
+            <router-link class="text-link-wrapper" tag="a" to="/work">
+              <span class="text-link">over here</span>
+            </router-link>&nbsp;&nbsp;for a glimpse of my work.
           </p>
         </div>
       </div>

@@ -1,4 +1,5 @@
 $backcolor: #00203fff;
+$inputbackcolor: #24415e;
 $primary: #adefd1ff;
 $secondary: rgb(241, 50, 50);
 $white: #fff;
@@ -11,6 +12,7 @@ $black: #000;
   padding: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 .full-page {
   width: 100vw;
@@ -19,7 +21,18 @@ $black: #000;
 .wow {
   visibility: hidden;
 }
+body {
+  overflow-x: hidden;
+}
 
+html.nav-open main {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 // Backmask - Clip Path
 // .backmask {
 //   background: $backcolor;
@@ -96,10 +109,7 @@ $black: #000;
 }
 .font {
   &-primary {
-    font-family: "Montserrat", sans-serif;
-  }
-  &-secondary {
-    font-family: "DM Serif Display", sans-serif;
+    font-family: "Rufina", sans-serif;
   }
 }
 
@@ -108,7 +118,7 @@ $black: #000;
     color: #fff;
     padding: 1rem 0;
     // font-family: "Montserrat", sans-serif;
-    font-family: "Roboto", serif;
+    font-family: "Nunito", serif;
     font-weight: 200;
     line-height: 1.5;
     font-size: 1.35rem;
@@ -147,6 +157,9 @@ $black: #000;
 
 .b-primary {
   background-color: $backcolor;
+}
+.b-transparent {
+  background: transparent;
 }
 
 // Display Values
@@ -272,407 +285,415 @@ body.o-hidden {
   opacity: 1 !important;
 }
 
+// Pointer Events
+.pointer-none {
+  pointer-events: none;
+}
+.pointer-all {
+  pointer-events: all;
+}
+
 // Paddings
 
 .pt-0 {
-  padding-top: 0rem;
+  padding-top: 0rem !important;
 }
 .pt-1 {
-  padding-top: 1rem;
+  padding-top: 1rem !important;
 }
 .pt-2 {
-  padding-top: 2rem;
+  padding-top: 2rem !important;
 }
 .pt-3 {
-  padding-top: 3rem;
+  padding-top: 3rem !important;
 }
 .pt-4 {
-  padding-top: 4rem;
+  padding-top: 4rem !important;
 }
 .pt-5 {
-  padding-top: 5rem;
+  padding-top: 5rem !important;
 }
 
 @media screen and (min-width: 768px) {
   .pt-0-desktop {
-    padding-top: 0rem;
+    padding-top: 0rem !important;
   }
   .pt-1-desktop {
-    padding-top: 1rem;
+    padding-top: 1rem !important;
   }
   .pt-2-desktop {
-    padding-top: 2rem;
+    padding-top: 2rem !important;
   }
   .pt-3-desktop {
-    padding-top: 3rem;
+    padding-top: 3rem !important;
   }
   .pt-4-desktop {
-    padding-top: 4rem;
+    padding-top: 4rem !important;
   }
   .pt-5-desktop {
-    padding-top: 5rem;
+    padding-top: 5rem !important;
   }
 }
 
 @media screen and (max-width: 768px) {
   .pt-0-mobile {
-    padding-top: 0rem;
+    padding-top: 0rem !important;
   }
   .pt-1-mobile {
-    padding-top: 1rem;
+    padding-top: 1rem !important;
   }
   .pt-2-mobile {
-    padding-top: 2rem;
+    padding-top: 2rem !important;
   }
   .pt-3-mobile {
-    padding-top: 3rem;
+    padding-top: 3rem !important;
   }
   .pt-4-mobile {
-    padding-top: 4rem;
+    padding-top: 4rem !important;
   }
   .pt-5-mobile {
-    padding-top: 5rem;
+    padding-top: 5rem !important;
   }
 }
 
 .pl-0 {
-  padding-left: 0rem;
+  padding-left: 0rem !important;
 }
 .pl-1 {
-  padding-left: 1rem;
+  padding-left: 1rem !important;
 }
 .pl-2 {
-  padding-left: 2rem;
+  padding-left: 2rem !important;
 }
 .pl-3 {
-  padding-left: 3rem;
+  padding-left: 3rem !important;
 }
 .pl-4 {
-  padding-left: 4rem;
+  padding-left: 4rem !important;
 }
 .pl-5 {
-  padding-left: 5rem;
+  padding-left: 5rem !important;
 }
 
 @media screen and (min-width: 768px) {
   .pl-0-desktop {
-    padding-left: 0rem;
+    padding-left: 0rem !important;
   }
   .pl-1-desktop {
-    padding-left: 1rem;
+    padding-left: 1rem !important;
   }
   .pl-2-desktop {
-    padding-left: 2rem;
+    padding-left: 2rem !important;
   }
   .pl-3-desktop {
-    padding-left: 3rem;
+    padding-left: 3rem !important;
   }
   .pl-4-desktop {
-    padding-left: 4rem;
+    padding-left: 4rem !important;
   }
   .pl-5-desktop {
-    padding-left: 5rem;
+    padding-left: 5rem !important;
   }
 }
 
 @media screen and (max-width: 768px) {
   .pl-0-mobile {
-    padding-left: 0rem;
+    padding-left: 0rem !important;
   }
   .pl-1-mobile {
-    padding-left: 1rem;
+    padding-left: 1rem !important;
   }
   .pl-2-mobile {
-    padding-left: 2rem;
+    padding-left: 2rem !important;
   }
   .pl-3-mobile {
-    padding-left: 3rem;
+    padding-left: 3rem !important;
   }
   .pl-4-mobile {
-    padding-left: 4rem;
+    padding-left: 4rem !important;
   }
   .pl-5-mobile {
-    padding-left: 5rem;
+    padding-left: 5rem !important;
   }
 }
 
 .pr-0 {
-  padding-right: 0rem;
+  padding-right: 0rem !important;
 }
 .pr-1 {
-  padding-right: 1rem;
+  padding-right: 1rem !important;
 }
 .pr-2 {
-  padding-right: 2rem;
+  padding-right: 2rem !important;
 }
 .pr-3 {
-  padding-right: 3rem;
+  padding-right: 3rem !important;
 }
 .pr-4 {
-  padding-right: 4rem;
+  padding-right: 4rem !important;
 }
 .pr-5 {
-  padding-right: 5rem;
+  padding-right: 5rem !important;
 }
 
 @media screen and (min-width: 768px) {
   .pr-0-desktop {
-    padding-right: 0rem;
+    padding-right: 0rem !important;
   }
   .pr-1-desktop {
-    padding-right: 1rem;
+    padding-right: 1rem !important;
   }
   .pr-2-desktop {
-    padding-right: 2rem;
+    padding-right: 2rem !important;
   }
   .pr-3-desktop {
-    padding-right: 3rem;
+    padding-right: 3rem !important;
   }
   .pr-4-desktop {
-    padding-right: 4rem;
+    padding-right: 4rem !important;
   }
   .pr-5-desktop {
-    padding-right: 5rem;
+    padding-right: 5rem !important;
   }
 }
 
 @media screen and (max-width: 768px) {
   .pr-0-mobile {
-    padding-right: 0rem;
+    padding-right: 0rem !important;
   }
   .pr-1-mobile {
-    padding-right: 1rem;
+    padding-right: 1rem !important;
   }
   .pr-2-mobile {
-    padding-right: 2rem;
+    padding-right: 2rem !important;
   }
   .pr-3-mobile {
-    padding-right: 3rem;
+    padding-right: 3rem !important;
   }
   .pr-4-mobile {
-    padding-right: 4rem;
+    padding-right: 4rem !important;
   }
   .pr-5-mobile {
-    padding-right: 5rem;
+    padding-right: 5rem !important;
   }
 }
 
 .pb-0 {
-  padding-right: 0rem;
+  padding-right: 0rem !important;
 }
 .pb-1 {
-  padding-bottom: 1rem;
+  padding-bottom: 1rem !important;
 }
 .pb-2 {
-  padding-bottom: 2rem;
+  padding-bottom: 2rem !important;
 }
 .pb-3 {
-  padding-bottom: 3rem;
+  padding-bottom: 3rem !important;
 }
 .pb-4 {
-  padding-bottom: 4rem;
+  padding-bottom: 4rem !important;
 }
 .pb-5 {
-  padding-bottom: 5rem;
+  padding-bottom: 5rem !important;
 }
 
 @media screen and (min-width: 768px) {
   .pb-0-desktop {
-    padding-bottom: 0rem;
+    padding-bottom: 0rem !important;
   }
   .pb-1-desktop {
-    padding-bottom: 1rem;
+    padding-bottom: 1rem !important;
   }
   .pb-2-desktop {
-    padding-bottom: 2rem;
+    padding-bottom: 2rem !important;
   }
   .pb-3-desktop {
-    padding-bottom: 3rem;
+    padding-bottom: 3rem !important;
   }
   .pb-4-desktop {
-    padding-bottom: 4rem;
+    padding-bottom: 4rem !important;
   }
   .pb-5-desktop {
-    padding-bottom: 5rem;
+    padding-bottom: 5rem !important;
   }
 }
 
 @media screen and (max-width: 768px) {
   .pb-0-mobile {
-    padding-bottom: 0rem;
+    padding-bottom: 0rem !important;
   }
   .pb-1-mobile {
-    padding-bottom: 1rem;
+    padding-bottom: 1rem !important;
   }
   .pb-2-mobile {
-    padding-bottom: 2rem;
+    padding-bottom: 2rem !important;
   }
   .pb-3-mobile {
-    padding-bottom: 3rem;
+    padding-bottom: 3rem !important;
   }
   .pb-4-mobile {
-    padding-bottom: 4rem;
+    padding-bottom: 4rem !important;
   }
   .pb-5-mobile {
-    padding-bottom: 5rem;
+    padding-bottom: 5rem !important;
   }
 }
 
 .py-0 {
-  padding-top: 0rem;
-  padding-bottom: 0rem;
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
 }
 .py-1 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
 }
 .py-2 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
 }
 .py-3 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
 }
 .py-4 {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
 }
 .py-5 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
 }
 
 @media screen and (min-width: 768px) {
   .py-0-desktop {
-    padding-top: 0rem;
-    padding-bottom: 0rem;
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
   }
   .py-1-desktop {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
   }
   .py-2-desktop {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
   }
   .py-3-desktop {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
   }
   .py-4-desktop {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
   }
   .py-5-desktop {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
   }
 }
 
 @media screen and (max-width: 768px) {
   .py-0-mobile {
-    padding-top: 0rem;
-    padding-bottom: 0rem;
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
   }
   .py-1-mobile {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
   }
   .py-2-mobile {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
   }
   .py-3-mobile {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
   }
   .py-4-mobile {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
   }
   .py-5-mobile {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
   }
 }
 
 .px-0 {
-  padding-left: 0rem;
-  padding-right: 0rem;
+  padding-left: 0rem !important;
+  padding-right: 0rem !important;
 }
 .px-1 {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
 }
 .px-2 {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
 }
 .px-3 {
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-left: 3rem !important;
+  padding-right: 3rem !important;
 }
 .px-4 {
-  padding-left: 4rem;
-  padding-right: 4rem;
+  padding-left: 4rem !important;
+  padding-right: 4rem !important;
 }
 .px-5 {
-  padding-left: 5rem;
-  padding-right: 5rem;
+  padding-left: 5rem !important;
+  padding-right: 5rem !important;
 }
 
 @media screen and (min-width: 768px) {
   .px-0-desktop {
-    padding-left: 0rem;
-    padding-right: 0rem;
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
   }
   .px-1-desktop {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
   }
   .px-2-desktop {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
   }
   .px-3-desktop {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
   }
   .px-4-desktop {
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding-left: 4rem !important;
+    padding-right: 4rem !important;
   }
   .px-5-desktop {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 5rem !important;
+    padding-right: 5rem !important;
   }
 }
 
 @media screen and (max-width: 768px) {
   .px-0-mobile {
-    padding-left: 0rem;
-    padding-right: 0rem;
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
   }
   .px-1-mobile {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
   }
   .px-2-mobile {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
   }
   .px-3-mobile {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
   }
   .px-4-mobile {
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding-left: 4rem !important;
+    padding-right: 4rem !important;
   }
   .px-5-mobile {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 5rem !important;
+    padding-right: 5rem !important;
   }
 }
 
@@ -745,5 +766,39 @@ body.o-hidden {
     background: rgba(255, 255, 255, 0.8);
     color: $black;
     border: 1px solid $white;
+  }
+}
+
+a.text-link-wrapper {
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(44, 204, 169);
+  font-weight: 600;
+  // padding: 0.3rem 0.2rem;
+  .text-link {
+    // padding-left: 3px;
+    // z-index: 2;
+    -webkit-transition: all 0.3s ease 0.2s;
+    transition: all 0.3s ease 0.2s;
+    position: relative;
+  }
+  &:before {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    content: "";
+    position: absolute;
+    top: 67%;
+    // z-index: 1;
+    height: 5px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5);
+  }
+  &:hover:before {
+    top: 0;
+    height: 100%;
+  }
+  &:hover .text-link {
+    color: $white;
   }
 }

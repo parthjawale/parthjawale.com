@@ -1,20 +1,205 @@
 <template>
-  <div class="about-page b-primary pb-5-desktop px-2-mobile pt-5">
-    <div class="name wow fadeInUp" data-wow-delay="0.5s">
-      <h1 class="heading-super font-secondary">
-        Hello, I'm
-        <span>Parth Jawale.</span>
-      </h1>
-    </div>
-    <div class="about-me-text text-common wow fadeIn" data-wow-delay="1.2s">
-      <p>
-        Lorem mollit in reprehenderit eiusmod ut sit laborum ad eiusmod ullamco. Laboris nostrud Lorem ut esse. Nostrud ea officia amet sit labore officia dolore occaecat. Aliquip consequat officia nisi ad fugiat exercitation. Elit aute ipsum ut aute. Culpa reprehenderit quis consectetur laborum qui magna fugiat ullamco.
-        <br />Adipisicing esse anim ex do laborum qui officia mollit. Consectetur reprehenderit ea qui officia culpa magna. Et duis aute proident sit anim cupidatat esse. Duis laboris anim do cupidatat do eiusmod elit excepteur. Magna velit non cupidatat ipsum eu sunt velit reprehenderit. Tempor mollit adipisicing culpa ea sunt.
-      </p>
-      <br />
-      <em>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, rem. Cupiditate a earum, deleniti labore quidem neque! Consectetur animi voluptas obcaecati, iusto asperiores atque quibusdam maxime pariatur, dolorum facilis unde.</em>
-      <br />
-      <p>Reprehenderit aute exercitation ex ad esse est non cillum est qui incididunt culpa ut. Incididunt nisi cillum duis incididunt adipisicing commodo commodo. Nisi exercitation aute commodo consequat dolor aliqua eiusmod mollit velit. Tempor enim eiusmod aliquip minim ex incididunt. Ipsum reprehenderit eu anim cillum amet ipsum amet Lorem consequat sint. Dolore sit adipisicing deserunt qui.</p>
+  <div class="about-page b-primary pb-5-desktop pb-5-mobile px-2-mobile pt-5">
+    <div class="scroll-progress" :style="`transform: scaleX(${scaleX})`"></div>
+    <div class="about-wrapper">
+      <div class="name wow fadeInUp" data-wow-delay="0.5s">
+        <h1 class="heading-super font-primary">
+          Hello, I'm
+          <span>Parth Jawale.</span>
+        </h1>
+      </div>
+      <div class="about-me-text text-common wow fadeIn" data-wow-delay="1.2s">
+        <p>I'm a full-stack web developer, inclined towards the backend and cloud services.</p>
+        <article>TL;DR: An effectual UI/UX beautifies and streamlines things, creating something equal parts easy and fun to use. My eternal goal is creating that something.</article>
+        <p>
+          My earliest memories of using a computer date back to when I was 6 years old, playing Road Rash on a Pentium 4 processor.
+          I've always since been fascinated by computers.
+        </p>
+        <p>I was 11 when I created my first webpage. It was a simple white-background page with a marquee tag and a million haphazardly placed paragraphs and heading tags. I built it, proudly, on the most advanced text editor of the time - The Windows Notepad.</p>
+        <p>
+          In retrospect, looking back at my first website would probably give me
+          <a
+            class="text-link-wrapper"
+            @mouseenter="cancer=true"
+            @mouseleave="cancer=false"
+            @click="setGif('cancer')"
+          >
+            <span class="text-link">cancer</span>
+          </a>. Although, the fire of fascination and experimentation that arose in me then is still burning in its full glory.
+        </p>
+        <p>My interest in this field grew even more when I got to high school. Friends &amp; family always approached me with computer issues because they knew that I loved solving problems — especially problems that had to do with technology.</p>
+        <p>
+          <em>The fact that there were limitless possibilities to the type of applications which could be fabricated, and the robust nature of programming lanuguages is what at first allured me to the world of programming.</em>
+        </p>
+        <p>
+          I was first properly introduced to a programming language - Java, when I was 15. Its intricate syntax and concepts got to me and I really enjoyed experimenting with them. I used to stay up whole nights, learning new stuff, most of it from the legendary Bucky -
+          <a
+            href="https://www.youtube.com/user/thenewboston"
+            class="text-link-wrapper"
+            target="_blank"
+          >
+            <span class="text-link">TheNewBoston</span>
+          </a> (not Captain America's
+          <a
+            class="text-link-wrapper"
+            @mouseenter="bestFriend=true"
+            @mouseleave="bestFriend=false"
+            @click="setGif('bestFriend')"
+          >
+            <span class="text-link">best friend</span>
+          </a> or Iron Man's
+          <a
+            class="text-link-wrapper"
+            @mouseenter="ironMan=true"
+            @mouseleave="ironMan=false"
+            @click="setGif('ironMan')"
+          >
+            <span class="text-link">*spoiler alert*</span>
+          </a>)
+        </p>
+        <p>I quicky progressed to C, C++ and my old friend - HTML. Moving forward to CSS, I started working projects. I learnt Javascript, applying it on the various (not always successful) experiments that I conducted with CSS. All this while, also learning a little bit of Microprocessor &mu;P8085.</p>
+        <p>College is where I polished my existing knowledge. I worked on the front-end and soon progressed to back-end where I found my passion. The backend, which determines the reliability of a system, its efficiency as well as its response time, appealed to me and I was found constantly learning new technologies, continually trying out new strategies to improve all these subtle aspects of a system. I was also introduced to the seemingly boundless world of Cloud Computing.</p>
+        <p>
+          <em>I am drawn to the philosophy of guaranteeing users the best User Experience (UX), one which holistically expresses the product or service in an easy to use manner, all the while assuring a fluid and sophisticated User Interface (UI).</em>
+        </p>
+        <p>Amazon Web Services (AWS) has been my abode for the majority of the past two years. From dispatching a virtual machine (EC2) or deploying web apps (Elastic Beanstalk) to using DynamoDB, I've experimented profusely in my projects, with AWS never letting me down.</p>
+        <p>
+          <b>P.S:</b> I'm a final year Bachelor of Technology (B.Tech) student at
+          <br />
+          <a href="https://jaipur.manipal.edu" target="_blank" class="text-link-wrapper">
+            <span class="text-link">Manipal University Jaipur</span>
+          </a>, majoring in Computer Science.
+        </p>
+        <p>
+          Nowadays, one can find me in my college room, either reading a book or working on projects. And
+          eating, of course.
+        </p>
+        <p>
+          <b class="heading">Skills</b>
+          <br />
+          <b>Web Development</b>
+          <br />- Front End: HTML, CSS, JavaScript, SASS, SCSS
+          <br />- Back End: PHP, NodeJS
+          <br />- Libraries & Frameworks: Bootstrap, VueJS, Vuetify, Vuex, Vuefire
+          <br />- Databases: Firebase, MySQL, MongoDB
+          <br />- DNS Management
+          <br />
+          <b>Server Administration</b>
+          <br />- Apache
+          <br />- NodeJS
+          <br />
+          <b>Cloud Computing</b>
+          <br />- Amazon Web Services (AWS) : EC2, Route 53, DynamoDB, S3, Elastic Beanstalk (EBS), AWS Lambda
+          <br />- Docker
+          <br />
+          <b>Adobe Photoshop</b>
+          <br />
+          <b>Programming Languages</b>
+          <br />- C
+          <br />- C++
+          <br />- Python
+          <br />- Java
+        </p>
+      </div>
+      <div class="gif-viewer" :style="gifStyle">
+        <iframe
+          v-if="cancer"
+          src="https://giphy.com/embed/JPW7lVDXKJgXu"
+          :width="gifWidth"
+          frameborder="0"
+          class="giphy-embed"
+          allowfullscreen
+        ></iframe>
+        <iframe
+          v-if="bestFriend"
+          src="https://giphy.com/embed/l0GtvIFAkD8KsNkfm"
+          :width="gifWidth"
+          frameborder="0"
+          class="giphy-embed"
+          allowfullscreen
+        ></iframe>
+        <iframe
+          v-if="ironMan"
+          src="https://giphy.com/embed/kC4EZJGbvlXpu"
+          :width="gifWidth"
+          frameborder="0"
+          class="giphy-embed"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div class="further">
+        <div class="further-work">
+          <h1 class="heading-super font-primary">
+            Looking for my work?
+            <br />
+            <h4>Hope you like it!</h4>
+            <router-link tag="button" to="/work">See Work</router-link>
+          </h1>
+        </div>
+        <div class="further-contact">
+          <h1 class="heading-super font-primary">
+            Want to hire me or work with me?
+            <br />
+            <h4>or have a really cool suggestion for a novel?</h4>
+            <router-link tag="button" to="/contact">Contact Me</router-link>
+          </h1>
+        </div>
+      </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data: () => ({
+    clientX: -500,
+    clientY: -500,
+    cancer: false,
+    bestFriend: false,
+    ironMan: false,
+    gifStyle: "top:-500px;left:-500px",
+    gifWidth: 360,
+    scaleX: 0
+  }),
+  mounted() {
+    this.gifDivMover();
+    this.scroller();
+  },
+  methods: {
+    gifDivMover() {
+      let _this = this;
+      window.addEventListener("mousemove", e => {
+        if (screen.width > 768) {
+          _this.gifStyle = `top:${e.pageY}px;left:${e.pageX}px`;
+        } else {
+          _this.gifStyle = `top:${e.pageY}px;left:50%`;
+          _this.gifWidth = 300;
+        }
+      });
+    },
+    scroller() {
+      let _this = this;
+      window.addEventListener("scroll", () => {
+        var winScroll =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        var height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        var scrolled = winScroll / height;
+        console.log(scrolled);
+        _this.scaleX = scrolled;
+      });
+    },
+    setGif(gif) {
+      if (screen.width <= 768) {
+        if (gif == "cancer") _this.cancer = true;
+        if (gif == "bestFriend") _this.bestFriend = true;
+        if (gif == "ironMan") _this.ironMan = true;
+      }
+    }
+  },
+  onDestroy() {
+    window.removeEventListener("mousemove");
+  }
+};
+</script>

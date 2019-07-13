@@ -2,8 +2,11 @@
   .about-page {
     // padding-top: 6rem;
     height: 100%;
-    width: 100%;
     margin: 0 auto;
+    margin-bottom: 100vh;
+    .about-wrapper {
+      width: 100vw;
+    }
     .name {
       h1 {
         font-size: 3rem;
@@ -11,6 +14,44 @@
         span {
           display: block;
         }
+      }
+    }
+    .gif-viewer {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .further {
+      position: fixed;
+      width: 100%;
+      display: flex;
+      height: 100%;
+      top: 0;
+      left: 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      button {
+        font-size: 1.4rem;
+        margin-top: 0.7rem;
+        padding: 0.5rem 0.5rem;
+      }
+      .further-work,
+      .further-contact {
+        width: 100%;
+        height: 50%;
+        padding-top: 0.8rem;
+        align-items: center;
+        justify-content: center;
+        h1 {
+          font-size: 1.9rem;
+          h4 {
+            padding: 0.8rem 0;
+            font-size: 1.2rem;
+          }
+        }
+      }
+      .further-work {
+        background-color: $white;
       }
     }
   }

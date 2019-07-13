@@ -7,7 +7,14 @@
       textarea {
         display: block;
         width: 50%;
+        -webkit-transition: 0.4s ease;
         transition: 0.4s ease;
+        i {
+          opacity: 0;
+          color: rgb(230, 54, 54);
+          -webkit-transition: 0.4s ease;
+          transition: 0.4s ease;
+        }
       }
       .input-label {
         font-size: 1.1rem;
@@ -15,18 +22,44 @@
       .active {
         color: $primary;
       }
+      input.invalid {
+        background-color: $inputbackcolor;
+      }
+      label.invalid {
+        color: rgb(230, 54, 54);
+        vertical-align: middle;
+      }
+      i.invalid {
+        opacity: 1;
+      }
       input,
       textarea {
         background: transparent;
         font-size: 1.8rem;
         outline: none;
         border: none;
+        resize: none;
         padding: 0.6rem 0;
-        border-radius: 10px;
+        // border-radius: 10px;
         color: white;
         max-width: 50%;
         min-width: 50%;
-        font-family: "Montserrat", sans-serif;
+        &::-webkit-input-placeholder {
+          font-family: "Montserrat", sans-serif;
+          color: rgba(144, 144, 144, 0.5);
+        }
+        &:-ms-input-placeholder {
+          font-family: "Montserrat", sans-serif;
+          color: rgba(144, 144, 144, 0.5);
+        }
+        &::-ms-input-placeholder {
+          font-family: "Montserrat", sans-serif;
+          color: rgba(144, 144, 144, 0.5);
+        }
+        &::placeholder {
+          font-family: "Montserrat", sans-serif;
+          color: rgba(144, 144, 144, 0.5);
+        }
       }
     }
   }
@@ -36,16 +69,19 @@
     a {
       position: relative;
       cursor: pointer;
+      color: $white;
+      text-decoration: none;
+      outline: none;
       padding: 0.3rem 0.2rem;
       .email-text {
+        padding-left: 3px;
         // z-index: 2;
+        -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
         position: relative;
-        &:hover {
-          color: $black;
-        }
       }
       &:before {
+        -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
         content: "";
         position: absolute;
@@ -58,6 +94,9 @@
       &:hover:before {
         top: 0;
         height: 100%;
+      }
+      &:hover .email-text {
+        color: $black;
       }
     }
   }

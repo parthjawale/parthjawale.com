@@ -1,10 +1,129 @@
 .about-page {
   // padding-top: 6rem;
   height: 100%;
-  width: 60%;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 100vh;
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 100;
+    height: 7px;
+    transform-origin: left center;
+    background-color: $secondary;
+  }
+  .about-wrapper {
+    width: 60%;
+  }
   .name {
     color: $primary;
     font-size: 5rem;
+  }
+  .about-me-text {
+    p {
+      padding: 1rem 0;
+      b.heading {
+        font-size: 2.1rem;
+        display: block;
+      }
+    }
+    article {
+      margin: 1rem 0;
+      padding: 1rem 1rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.3);
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+  .gif-viewer {
+    position: absolute;
+    top: -500px;
+    left: -500px;
+    pointer-events: none;
+  }
+  .further {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    button {
+      font-family: "Nunito", serif;
+      font-size: 2rem;
+      background: transparent;
+      border-radius: 0;
+      border: none;
+      outline: none;
+      margin-top: 3rem;
+      padding: 1rem 1rem;
+      transition: 0.4s ease-in-out;
+      cursor: pointer;
+    }
+    .further-work,
+    .further-contact {
+      width: 50%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.4s ease-in-out;
+      &:hover {
+        background-color: $black;
+        button {
+          color: $white;
+          background-color: $secondary;
+          border: 3px solid $secondary;
+          &:hover {
+            background-color: $white;
+            color: $secondary;
+            border: 3px solid $white;
+          }
+        }
+        h1 {
+          color: $white;
+        }
+      }
+    }
+    .further-contact {
+      background-color: $secondary;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      button {
+        color: $white;
+        border: 3px solid $white;
+      }
+      h1 {
+        width: 70%;
+        color: $white;
+        h4 {
+          font-size: 2rem;
+        }
+      }
+    }
+    .further-work {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      button {
+        color: $secondary;
+        border: 3px solid $secondary;
+      }
+      h1 {
+        width: 70%;
+        color: $secondary;
+        h4 {
+          font-size: 2rem;
+        }
+      }
+    }
   }
 }

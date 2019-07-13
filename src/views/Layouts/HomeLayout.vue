@@ -1,5 +1,5 @@
 <template>
-  <main class="b-primary pb-3-mobile">
+  <main>
     <router-view></router-view>
   </main>
 </template>
