@@ -1,6 +1,7 @@
 # Portfolio
 
-##About Project
+## About Project
+
 This is a personal project, mainly to provide a single platform to access all my work, information and interests.
 
 This site has been created using VueJS and WOW.JS.
