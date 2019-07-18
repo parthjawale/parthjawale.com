@@ -1,13 +1,14 @@
 <template>
   <div
-    :class="['mouse-pointer', 'd-none-mobile', {'hovered-link':hoveredLink}, 'wow', 'fadeIn']"
+    v-show="show"
+    :class="['mouse-pointer', 'd-none-mobile', {'hovered-link':hoveredLink}]"
     :style="`top:${top};left:${left}`"
   ></div>
 </template>
 
 <script>
 export default {
-  props: ["hoveredLink"],
+  props: ["hoveredLink", "show"],
   data: () => ({
     top: "0px",
     left: "0px"

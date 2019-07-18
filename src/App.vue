@@ -4,7 +4,7 @@
       <navbar v-show="dataLoaded" />
     </transition>
     <preloader :loaded="dataLoaded" :hideMask="!hideMask" />
-    <mouse :hoveredLink="hoveredLink" />
+    <mouse :show="showMousePointer" :hoveredLink="hoveredLink" />
     <layout />
     <footr v-show="dataLoaded" />
   </div>
@@ -37,17 +37,12 @@ export default {
     return {
       dataLoaded: false,
       hideMask: false,
-      hoveredLink: false
+      hoveredLink: false,
+      showMousePointer: false
     };
   },
   created() {
     let _this = this;
-    var elements = document.getElementsByTagName("a");
-    for (var i = 0, len = elements.length; i < len; i++) {
-      elements[i].addEventListener("mouseover", function() {
-        console.log("in");
-      });
-    }
     bus.$on("componentLoaded", data => {
       setTimeout(function() {
         _this.dataLoaded = true;
@@ -59,6 +54,7 @@ export default {
     bus.$on("backmask-clip-start", function() {
       setTimeout(() => {
         new WOW().init();
+        _this.showMousePointer = true;
       }, 900);
     });
   }
