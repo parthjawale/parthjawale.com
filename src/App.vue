@@ -1,7 +1,10 @@
 <template>
   <div id="app">
-    <navbar v-show="dataLoaded" />
+    <transition name="fade">
+      <navbar v-show="dataLoaded" />
+    </transition>
     <preloader :loaded="dataLoaded" :hideMask="!hideMask" />
+    <mouse :hoveredLink="hoveredLink" />
     <layout />
     <footr v-show="dataLoaded" />
   </div>
@@ -17,6 +20,7 @@ import WOW from "wow.js";
 import Backmask from "@/components/Globals/Backmask";
 import Preloader from "@/components/Globals/Preloader";
 import Navbar from "@/components/Globals/Navbar";
+import MousePointer from "@/components/Globals/MousePointer";
 import Layout from "@/views/Layouts/HomeLayout";
 import Footer from "@/components/Globals/Footer";
 
@@ -25,17 +29,25 @@ export default {
     backmask: Backmask,
     preloader: Preloader,
     navbar: Navbar,
+    mouse: MousePointer,
     layout: Layout,
     footr: Footer
   },
   data() {
     return {
       dataLoaded: false,
-      hideMask: false
+      hideMask: false,
+      hoveredLink: false
     };
   },
   created() {
     let _this = this;
+    var elements = document.getElementsByTagName("a");
+    for (var i = 0, len = elements.length; i < len; i++) {
+      elements[i].addEventListener("mouseover", function() {
+        console.log("in");
+      });
+    }
     bus.$on("componentLoaded", data => {
       setTimeout(function() {
         _this.dataLoaded = true;

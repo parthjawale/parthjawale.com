@@ -13,7 +13,7 @@
   -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
   .heading {
-    width: 50%;
+    width: 40%;
     position: fixed;
     left: 0;
     top: 50%;
@@ -113,12 +113,43 @@
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+    .work-heading {
+      padding-top: 1rem;
+      padding-bottom: 0;
+      color: $white;
+      font-family: "Nunito", sans-serif;
+      font-weight: 600;
+      margin: 0;
+      font-size: 3rem;
+    }
+    p {
+      padding-top: 0;
+    }
     .work-item {
       margin: 0 auto;
       height: 500px;
       width: 100%;
-      border: 1px solid $white;
+      padding: 0 0.5rem;
+      // border: 1px solid $white;
       margin: 2rem auto;
+      &:not(:last-child) {
+        margin-bottom: 4rem;
+      }
+      img {
+        height: 200px;
+        width: auto;
+        max-width: 80%;
+        transform: rotate(2deg);
+        padding: 0.5rem;
+        transition: 0.4s ease;
+        &:hover {
+          transform: rotate(0deg) scale(1.05);
+        }
+      }
+      p {
+        color: $white;
+        font-size: 1.2rem;
+      }
     }
   }
 }

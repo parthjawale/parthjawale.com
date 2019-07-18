@@ -1,7 +1,11 @@
 <template>
-  <div class="contact-me px-2 pt-5 pb-5-desktop pb-5-mobile b-primary">
-    <div class="heading">
-      <h1 class="heading-super font-primary wow fadeIn" data-wow-delay="0.5s">Contact Me</h1>
+  <div class="contact-me px-2-desktop px-1-mobile pt-5 pb-5-desktop pb-5-mobile b-primary">
+    <div class="heading wow fadeIn" data-wow-delay="0.5s">
+      <h1 class="heading-super font-primary">Contact Me</h1>
+      <h6>
+        or mail me at
+        <a href="mailto:hello@parthjawale.com">hello@parthjawale.com</a>
+      </h6>
     </div>
     <form>
       <div class="inputs pb-2">
@@ -61,7 +65,7 @@
             type="text"
             rows="1"
             v-model="formData.message"
-            placeholder="What's do you want to tell me?"
+            placeholder="What do you want to tell me?"
             @input="inputChanged('message')"
           />
         </div>
@@ -73,7 +77,7 @@
         data-wow-delay="1.6s"
       >Send</button>
     </form>
-    <div class="text-common email pt-2 wow fadeInUp">
+    <div class="text-common email pt-2 wow fadeInUp" data-wow-delay="0.5s">
       <a href="mailto:hello@parthjawale.com">
         <span class="email-text">I prefer good old-fashioned email.</span>
       </a>
@@ -114,24 +118,7 @@ export default {
       return true;
     }
   },
-  mounted() {
-    console.log("scroll fired");
-    this.scroll();
-  },
   methods: {
-    scroll() {
-      window.onscroll = () => {
-        let bottomWindow =
-          Math.max(
-            window.pageYOffset,
-            document.documentElement.scrollTop,
-            document.body.scrollTop
-          ) +
-            window.innerHeight ===
-          document.documentElement.offsetHeight;
-        if (bottomWindow) console.log("end of page");
-      };
-    },
     validEmail(email) {
       var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       let res = re.test(email.toLowerCase());

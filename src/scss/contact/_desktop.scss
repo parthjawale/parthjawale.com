@@ -1,5 +1,22 @@
 .contact-me {
-  // padding-top: 6rem;
+  .heading {
+    h6 {
+      color: rgba(255, 255, 255, 0.2);
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 1.6rem;
+      padding: 1rem 0;
+      a {
+        outline: none;
+        border: none;
+        color: inherit;
+        transition: 0.4s color ease;
+        &:hover {
+          color: rgba(255, 255, 255, 0.3);
+        }
+      }
+    }
+  }
   .inputs {
     .input-group {
       label,
@@ -68,7 +85,7 @@
     letter-spacing: 1px;
     a {
       position: relative;
-      cursor: pointer;
+      // cursor: pointer;
       color: $white;
       text-decoration: none;
       outline: none;
@@ -91,11 +108,13 @@
         width: 100%;
         background: rgb(202, 202, 133);
       }
-      &:hover:before {
+      &:hover:before,
+      &:active:before {
         top: 0;
         height: 100%;
       }
-      &:hover .email-text {
+      &:hover .email-text,
+      &:active .email-text {
         color: $black;
       }
     }

@@ -1,6 +1,12 @@
 <template>
   <div class="about-page b-primary pb-5-desktop pb-5-mobile px-2-mobile pt-5">
-    <div class="scroll-progress" :style="`transform: scaleX(${scaleX})`"></div>
+    <transition name="fade">
+      <div
+        class="scroll-progress"
+        :style="`transform: scaleX(${scaleX})`"
+        v-if="!scrollProgressHide"
+      ></div>
+    </transition>
     <div class="about-wrapper">
       <div class="name wow fadeInUp" data-wow-delay="0.5s">
         <h1 class="heading-super font-primary">
@@ -83,6 +89,7 @@
           <br />- Libraries & Frameworks: Bootstrap, VueJS, Vuetify, Vuex, Vuefire
           <br />- Databases: Firebase, MySQL, MongoDB
           <br />- DNS Management
+          <br />- Docker
           <br />
           <b>Server Administration</b>
           <br />- Apache
@@ -90,7 +97,6 @@
           <br />
           <b>Cloud Computing</b>
           <br />- Amazon Web Services (AWS) : EC2, Route 53, DynamoDB, S3, Elastic Beanstalk (EBS), AWS Lambda
-          <br />- Docker
           <br />
           <b>Adobe Photoshop</b>
           <br />
@@ -104,7 +110,7 @@
       <div class="gif-viewer" :style="gifStyle">
         <iframe
           v-if="cancer"
-          src="https://giphy.com/embed/JPW7lVDXKJgXu"
+          src="https://giphy.com/embed/3og0IU2CCxcCsu0bgk"
           :width="gifWidth"
           frameborder="0"
           class="giphy-embed"
@@ -150,6 +156,7 @@
 </template>
 
 <script>
+import { bus } from "@/main";
 export default {
   data: () => ({
     clientX: -500,
@@ -159,7 +166,8 @@ export default {
     ironMan: false,
     gifStyle: "top:-500px;left:-500px",
     gifWidth: 360,
-    scaleX: 0
+    scaleX: 0,
+    scrollProgressHide: false
   }),
   mounted() {
     this.gifDivMover();
@@ -186,11 +194,16 @@ export default {
           document.documentElement.scrollHeight -
           document.documentElement.clientHeight;
         var scrolled = winScroll / height;
-        console.log(scrolled);
+        if (winScroll / height >= 0.99) {
+          _this.scrollProgressHide = true;
+        } else {
+          _this.scrollProgressHide = false;
+        }
         _this.scaleX = scrolled;
       });
     },
     setGif(gif) {
+      let _this = this;
       if (screen.width <= 768) {
         if (gif == "cancer") _this.cancer = true;
         if (gif == "bestFriend") _this.bestFriend = true;

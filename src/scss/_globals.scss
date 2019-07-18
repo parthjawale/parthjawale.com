@@ -13,6 +13,7 @@ $black: #000;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  cursor: none;
 }
 .full-page {
   width: 100vw;
@@ -754,12 +755,13 @@ body.o-hidden {
   padding: 1.4rem 2rem;
   color: $white;
   position: relative;
+  -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
   border: 1px solid transparent;
 }
 .btn-large.active {
   background: transparent;
-  cursor: pointer;
+  // cursor: pointer;
   border: 1px solid $white;
   color: $primary;
   &:hover {
@@ -771,7 +773,7 @@ body.o-hidden {
 
 a.text-link-wrapper {
   position: relative;
-  cursor: pointer;
+  // cursor: pointer;
   text-decoration: none;
   color: rgb(44, 204, 169);
   font-weight: 600;
@@ -782,6 +784,9 @@ a.text-link-wrapper {
     -webkit-transition: all 0.3s ease 0.2s;
     transition: all 0.3s ease 0.2s;
     position: relative;
+  }
+  i {
+    padding-left: 0.5rem;
   }
   &:before {
     -webkit-transition: all 0.3s ease;
@@ -799,6 +804,11 @@ a.text-link-wrapper {
     height: 100%;
   }
   &:hover .text-link {
+    color: $white;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  &:hover i {
     color: $white;
   }
 }
