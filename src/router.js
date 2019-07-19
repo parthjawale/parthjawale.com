@@ -4,7 +4,7 @@ import Home from "@/views/Pages/Home";
 import About from "@/views/Pages/About";
 import Contact from "@/views/Pages/Contact";
 import Work from "@/views/Pages/Work";
-
+import WorkRoutes from "@/routes/workroutes";
 Vue.use(Router);
 
 export default new Router({
@@ -30,7 +30,8 @@ export default new Router({
       path: "/work",
       name: "Work",
       component: Work
-    }
+    },
+    ...WorkRoutes
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition)

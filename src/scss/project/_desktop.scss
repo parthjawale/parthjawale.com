@@ -1,0 +1,45 @@
+.project {
+  &-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+  }
+  &-about {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h2 {
+      font-size: 3rem;
+      font-family: "Nunito", sans-serif;
+      color: $white;
+      font-weight: 600;
+    }
+    a {
+      margin: 1rem 1rem;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+  &-mockup {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      max-width: 80%;
+      height: auto;
+    }
+  }
+  &-links {
+    a {
+      font-size: 1.3rem;
+      font-weight: 200;
+      i {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}

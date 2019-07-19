@@ -15,9 +15,22 @@ $black: #000;
   scroll-behavior: smooth;
   cursor: none;
 }
+
 .full-page {
   width: 100vw;
   height: 100vh;
+}
+@media screen and (max-width: 768px) {
+  .full-page-mobile {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+@media screen and (min-width: 768px) {
+  .full-page-desktop {
+    width: 100vw;
+    height: 100vh;
+  }
 }
 .wow {
   visibility: hidden;
@@ -111,6 +124,12 @@ html.nav-open main {
 .font {
   &-primary {
     font-family: "Rufina", sans-serif;
+  }
+  &-secondary {
+    font-family: "Nunito", sans-serif;
+  }
+  &-tertiary {
+    font-family: "Montserrat", sans-serif;
   }
 }
 
@@ -776,6 +795,8 @@ a.text-link-wrapper {
   // cursor: pointer;
   text-decoration: none;
   color: rgb(44, 204, 169);
+  display: inline-flex;
+  align-items: center;
   font-weight: 600;
   // padding: 0.3rem 0.2rem;
   .text-link {

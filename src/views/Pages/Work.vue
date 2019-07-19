@@ -14,9 +14,9 @@
           Laboris minim irure cillum proident. Nisi occaecat quis veniam laborum Lorem duis et. Eiusmod esse ullamco laborum exercitation fugiat excepteur ea. Veniam velit ullamco esse dolor minim.
           <br />Nulla sunt dolore ipsum ex ullamco ad. Mollit deserunt eiusmod duis eiusmod aliquip ex eiusmod culpa consequat duis commodo sint. Anim dolore laboris voluptate in culpa do tempor ea reprehenderit laboris incididunt minim.
           <br />
-          <a class="text-link-wrapper" href="https://oneiros.mext.in" target="_blank">
+          <router-link tag="a" class="text-link-wrapper" to="/work/oneiros">
             <span class="text-link">View Project</span>
-          </a>
+          </router-link>
         </p>
       </div>
       <div class="work-item">
@@ -26,9 +26,9 @@
           Laboris minim irure cillum proident. Nisi occaecat quis veniam laborum Lorem duis et. Eiusmod esse ullamco laborum exercitation fugiat excepteur ea. Veniam velit ullamco esse dolor minim.
           <br />Nulla sunt dolore ipsum ex ullamco ad. Mollit deserunt eiusmod duis eiusmod aliquip ex eiusmod culpa consequat duis commodo sint. Anim dolore laboris voluptate in culpa do tempor ea reprehenderit laboris incididunt minim.
           <br />
-          <a class="text-link-wrapper" href="https://masalaraaj.parthjawale.com" target="_blank">
+          <router-link class="text-link-wrapper" to="/work/masalaraaj">
             <span class="text-link">View Project</span>
-          </a>
+          </router-link>
         </p>
       </div>
     </div>

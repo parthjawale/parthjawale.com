@@ -1,0 +1,18 @@
+@media screen and (max-width: 768px) {
+  .project {
+    &-wrapper {
+      flex-direction: column-reverse;
+    }
+    &-about {
+      margin-top: 2.5rem;
+      width: 100%;
+    }
+    &-mockup {
+      margin-top: 2rem;
+      width: 100%;
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
