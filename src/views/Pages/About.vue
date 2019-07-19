@@ -109,7 +109,7 @@
       </div>
       <div class="gif-viewer" :style="gifStyle">
         <iframe
-          v-if="cancer"
+          v-show="cancer"
           src="https://giphy.com/embed/3og0IU2CCxcCsu0bgk"
           :width="gifWidth"
           frameborder="0"
@@ -117,7 +117,7 @@
           allowfullscreen
         ></iframe>
         <iframe
-          v-if="bestFriend"
+          v-show="bestFriend"
           src="https://giphy.com/embed/l0GtvIFAkD8KsNkfm"
           :width="gifWidth"
           frameborder="0"
@@ -125,7 +125,7 @@
           allowfullscreen
         ></iframe>
         <iframe
-          v-if="ironMan"
+          v-show="ironMan"
           src="https://giphy.com/embed/kC4EZJGbvlXpu"
           :width="gifWidth"
           frameborder="0"
@@ -194,10 +194,18 @@ export default {
           document.documentElement.scrollHeight -
           document.documentElement.clientHeight;
         var scrolled = winScroll / height;
-        if (winScroll / height >= 0.99) {
-          _this.scrollProgressHide = true;
+        if (screen.width > 768) {
+          if (winScroll / height >= 0.99) {
+            _this.scrollProgressHide = true;
+          } else {
+            _this.scrollProgressHide = false;
+          }
         } else {
-          _this.scrollProgressHide = false;
+          if (winScroll / height >= 0.95) {
+            _this.scrollProgressHide = true;
+          } else {
+            _this.scrollProgressHide = false;
+          }
         }
         _this.scaleX = scrolled;
       });

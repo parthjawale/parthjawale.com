@@ -17,14 +17,19 @@
             <br />Co-Founder at
             <a class="text-link-wrapper" href="https://mext.in" target="_blank">
               <span class="text-link">Mext</span>
-            </a>, Technical Lead at
-            <a
-              href="https://gramiksha.in"
-              class="text-link-wrapper"
-              target="blank"
-            >
-              <span class="text-link">Gramiksha</span>
-            </a>.
+            </a>,
+            <span class="tooltip" data-popup="From June '18 - March '19">
+              <span class="strikethrough">
+                Technical Lead at
+                <a
+                  href="https://gramiksha.in"
+                  class="text-link-wrapper"
+                  target="blank"
+                >
+                  <span class="text-link">Gramiksha</span>
+                </a>.
+              </span>
+            </span>
             <br />
             <br />
             <router-link tag="a" class="text-link-wrapper" to="/about">

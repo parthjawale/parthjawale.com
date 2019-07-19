@@ -72,9 +72,8 @@
       </div>
       <button
         type="submit"
-        :class="['btn-large', 'font-primary', 'wow', 'fadeInUp',{active:formValid}]"
-        :disabled="!formValid"
-        data-wow-delay="1.6s"
+        :class="['btn-large', 'font-primary', 'wow', 'fadeInUp',{active:formValid}, {'pointer-none': !formValid}]"
+        data-wow-delay="0.3s"
       >Send</button>
     </form>
     <div class="text-common email pt-2 wow fadeInUp" data-wow-delay="0.5s">
