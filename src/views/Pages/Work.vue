@@ -11,8 +11,7 @@
         <img src="@/assets/projects/Oneiros/2.png" />
         <h2 class="work-heading">Oneiros</h2>
         <p class="text-common">
-          Laboris minim irure cillum proident. Nisi occaecat quis veniam laborum Lorem duis et. Eiusmod esse ullamco laborum exercitation fugiat excepteur ea. Veniam velit ullamco esse dolor minim.
-          <br />Nulla sunt dolore ipsum ex ullamco ad. Mollit deserunt eiusmod duis eiusmod aliquip ex eiusmod culpa consequat duis commodo sint. Anim dolore laboris voluptate in culpa do tempor ea reprehenderit laboris incididunt minim.
+          Oneiros is the annual cultural festival of Manipal University Jaipur. It is one of the biggest cultural festivals in Rajasthan. This site uses WebGL to create an immersive logo experience coupled with beautiful designs which bring out the true colours of this truly glorious festival.
           <br />
           <router-link tag="a" class="text-link-wrapper" to="/work/oneiros">
             <span class="text-link">View Project</span>
@@ -23,8 +22,7 @@
         <img src="@/assets/projects/MasalaRaaj/1.png" />
         <h2 class="work-heading">Masala Raaj</h2>
         <p class="text-common">
-          Laboris minim irure cillum proident. Nisi occaecat quis veniam laborum Lorem duis et. Eiusmod esse ullamco laborum exercitation fugiat excepteur ea. Veniam velit ullamco esse dolor minim.
-          <br />Nulla sunt dolore ipsum ex ullamco ad. Mollit deserunt eiusmod duis eiusmod aliquip ex eiusmod culpa consequat duis commodo sint. Anim dolore laboris voluptate in culpa do tempor ea reprehenderit laboris incididunt minim.
+          Masala Raaj is a spice brand, hailing from Nagaur, Rajasthan. It combines a richness in taste with a penchant for nurturing customer relationships. According to requirements, a minimalistic, easily navigable yet pleasing to the eyes look is what defines the crux of this website.
           <br />
           <router-link class="text-link-wrapper" to="/work/masalaraaj">
             <span class="text-link">View Project</span>

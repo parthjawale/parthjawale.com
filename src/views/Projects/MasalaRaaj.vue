@@ -3,11 +3,10 @@
     <div class="project-wrapper">
       <div class="project-about">
         <h2 class="wow fadeInUp" data-wow-duration="0.9s" data-wow-delay="0.6s">Masala Raaj</h2>
-        <p
-          class="text-common wow fadeInUp"
-          data-wow-duration="1.3s"
-          data-wow-delay="0.8s"
-        >Nulla et pariatur reprehenderit anim pariatur dolore. Elit ullamco anim commodo incididunt quis esse Lorem ut fugiat. Dolor tempor ullamco exercitation exercitation consequat Lorem ipsum elit qui. Id cupidatat id consectetur proident do amet mollit irure eiusmod mollit aute enim magna tempor.</p>
+        <p class="text-common wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
+          I was provided the task of revamping the existing website of Masala Raaj. The previous website hosted a haphazard culmination of opposing colors and an abundance of elements which rendered any user experience void.
+          <br />On this note, since the conception of the design of this website, a clean, minimalistic look has been followed, which also extends to the color scheme followed and the simple yet powerful navigability.
+        </p>
         <div class="project-links wow fadeInUp" data-wow-duration="0.6s" data-wow-delay="1.5s">
           <a
             href="https://masalaraaj.parthjawale.com"

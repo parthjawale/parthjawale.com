@@ -7,7 +7,7 @@
         <a href="mailto:hello@parthjawale.com">hello@parthjawale.com</a>
       </h6>
     </div>
-    <form>
+    <form @submit.prevent="submitForm">
       <div class="inputs pb-2">
         <div class="input-group wow fadeInUp" data-wow-delay="0.7s">
           <label
@@ -111,7 +111,7 @@ export default {
         )
           return false;
         if (i == "email") {
-          if (!this.validEmail(i)) return false;
+          if (this.validEmail(i) != "" && !this.validEmail(i)) return false;
         }
       }
       return true;
@@ -140,6 +140,36 @@ export default {
       } else {
         this.inputs[`${input}Active`] = false;
       }
+    },
+    submitForm() {
+      let body = {
+        replyTo: this.formData.email,
+        subject: `New Contact - ${this.formData.firstname} ${this.formData.lastname}`,
+        body: `Name: ${this.formData.firstname} ${this.formData.lastname}<br><br>Email: ${this.formData.email}<br><br>Message: ${this.formData.message}`
+      };
+      fetch(
+        "https://ox3l8mqk6l.execute-api.ap-south-1.amazonaws.com/api/sendmail",
+        {
+          method: "POST",
+          body: JSON.stringify(body),
+          headers: {
+            "Access-Control-Allow-Origin": "*"
+          }
+        }
+      )
+        .then(res => {
+          return res.json();
+        })
+        .then(response => {
+          if (response.statusCode == 200) {
+            this.formData = {
+              firstname: "",
+              lastname: "",
+              email: "",
+              message: ""
+            };
+          }
+        });
     }
   },
   watch: {
