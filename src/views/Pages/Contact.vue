@@ -7,7 +7,7 @@
         <a href="mailto:hello@parthjawale.com">hello@parthjawale.com</a>
       </h6>
     </div>
-    <form @submit.prevent="submitForm">
+    <form @submit.prevent="submitForm" ref="contactForm">
       <div class="inputs pb-2">
         <div class="input-group wow fadeInUp" data-wow-delay="0.7s">
           <label
@@ -40,14 +40,16 @@
         <div class="input-group wow fadeInUp" data-wow-delay="1.1s">
           <label
             for="Name"
-            :class="['text-common' ,'input-label', {active: inputs.emailActive}, {invalid: !emailValid}]"
+            :class="['text-common' ,'input-label', {active: inputs.emailActive}, {invalid: (!emailValid && formData.email != '')}]"
           >
             Email Address
-            <i :class="['fas' ,'fa-exclamation-circle', {invalid:!emailValid}]"></i>
+            <i
+              :class="['fas' ,'fa-exclamation-circle', {invalid: (!emailValid && formData.email != '')}]"
+            ></i>
           </label>
           <input
             autocomplete="off"
-            :class="['text-common', {invalid: !emailValid}]"
+            :class="['text-common', {invalid: (!emailValid && formData.email != '')}]"
             type="text"
             v-model="formData.email"
             placeholder="What's your email address?"
@@ -70,11 +72,12 @@
           />
         </div>
       </div>
-      <button
-        type="submit"
-        :class="['btn-large', 'font-primary', 'wow', 'fadeInUp',{active:formValid}, {'pointer-none': !formValid}]"
-        data-wow-delay="0.3s"
-      >Send</button>
+      <button type="submit" id="contactFormButton" :class="submitButtonClass" data-wow-delay="0.3s">
+        <svg>
+          <rect />
+        </svg>
+        Send
+      </button>
     </form>
     <div class="text-common email pt-2 wow fadeInUp" data-wow-delay="0.5s">
       <a href="mailto:hello@parthjawale.com">
@@ -93,34 +96,39 @@ export default {
       email: "",
       message: ""
     },
+    submitButtonClass: "btn-svg font-primary wow fadeInUp pointer-none",
     inputs: {
       firstnameActive: false,
       lastnameActive: false,
       emailActive: false,
       messageActive: false
     },
-    emailValid: true
+    emailValid: true,
+    formValid: false
   }),
-  computed: {
-    formValid() {
-      for (let i in this.inputs) {
-        if (
-          this.inputs[i] == "" ||
-          this.inputs[i] == null ||
-          this.inputs[i] == undefined
-        )
-          return false;
-        if (i == "email") {
-          if (this.validEmail(i) != "" && !this.validEmail(i)) return false;
-        }
-      }
-      return true;
-    }
-  },
+  // computed: {
+  //   validateForm() {
+  //     return this.formValid();
+  //   }
+  // },
   methods: {
+    // validateForm() {
+    //   for (let i in this.inputs) {
+    //     if (
+    //       this.inputs[i] == "" ||
+    //       this.inputs[i] == null ||
+    //       this.inputs[i] == undefined
+    //     )
+    //       this.btnActive = false;
+    //     if (i == "email") {
+    //       if (!this.validEmail(i)) return false;
+    //     }
+    //   }
+    //   this.btnActive = true;
+    // },
     validEmail(email) {
       var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      let res = re.test(email.toLowerCase());
+      let res = re.test(email.toLowerCase().trim());
       return res;
     },
     inputChanged(input) {
@@ -142,6 +150,9 @@ export default {
       }
     },
     submitForm() {
+      this.submitButtonClass =
+        "btn-svg font-primary wow fadeInUp pointer-none loading";
+      let _this = this;
       let body = {
         replyTo: this.formData.email,
         subject: `New Contact - ${this.formData.firstname} ${this.formData.lastname}`,
@@ -162,17 +173,45 @@ export default {
         })
         .then(response => {
           if (response.statusCode == 200) {
-            this.formData = {
-              firstname: "",
-              lastname: "",
-              email: "",
-              message: ""
-            };
+            this.formData["firstname"] = "";
+            this.formData["lastname"] = "";
+            this.formData["email"] = "";
+            this.formData["message"] = "";
+            this.inputs["firstnameActive"] = false;
+            this.inputs["lastnameActive"] = false;
+            this.inputs["emailActive"] = false;
+            this.inputs["messageActive"] = false;
+            this.formValid = false;
+            _this.submitButtonClass =
+              "btn-svg font-primary wow fadeInUp pointer-none";
           }
         });
     }
   },
   watch: {
+    formData: {
+      handler(val, newVal) {
+        this.formValid = true;
+        for (let i in newVal) {
+          if (newVal[i] == "" || newVal[i] == null || newVal[i] == undefined) {
+            this.formValid = false;
+            this.submitButtonClass =
+              "btn-svg font-primary wow fadeInUp pointer-none";
+          }
+          if (i == "email") {
+            if (!this.validEmail(newVal[i])) {
+              this.formValid = false;
+              this.submitButtonClass =
+                "btn-svg font-primary wow fadeInUp pointer-none";
+            }
+          }
+        }
+        if (this.formValid == true) {
+          this.submitButtonClass = "btn-svg font-primary wow fadeInUp active";
+        }
+      },
+      deep: true
+    },
     "formData.email"(data) {
       let res = this.validEmail(data);
       this.emailValid = res;

@@ -119,4 +119,57 @@
       }
     }
   }
+  .btn-svg {
+    font-size: 1.4rem;
+    border-radius: 0;
+    z-index: inherit;
+    border: none;
+    outline: none;
+    background: rgba(0, 0, 0, 0.3);
+    color: $white;
+    position: relative;
+    height: 80px;
+    width: 100px;
+    svg,
+    svg rect {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      fill: transparent;
+    }
+  }
+  .btn-svg.active {
+    svg rect {
+      stroke: $white;
+      stroke-width: 4;
+      stroke-dasharray: 360;
+      stroke-dashoffset: 0;
+      transition: 0.4s ease;
+    }
+    &:hover svg rect {
+      stroke-dasharray: 0 400;
+    }
+  }
+  .btn-svg.loading {
+    pointer-events: none;
+    svg rect {
+      stroke: $white;
+      stroke-width: 4;
+      stroke-dasharray: 360;
+      stroke-dashoffset: 0;
+      transition: 0.4s ease;
+      stroke-dasharray: 50 310;
+      animation: svgLoadingButton 1.4s linear infinite forwards;
+    }
+  }
+}
+@keyframes svgLoadingButton {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 340;
+  }
 }

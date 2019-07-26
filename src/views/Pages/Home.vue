@@ -7,7 +7,7 @@
             class="heading-super font-primary wow fadeInUp"
             data-wow-duration="0.9s"
             data-wow-delay="0.6s"
-          >Web Developer, chocolate and beer lover.</h2>
+          >UX/UI, Backend Developer &amp; Chocolate Lover.</h2>
         </div>
         <div class="text-common">
           <p class="wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="1.2s">
