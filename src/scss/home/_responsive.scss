@@ -1,6 +1,7 @@
 @media screen and (max-width: 768px) {
   #home-page {
     width: 100vw;
+    min-height: 100vh;
     padding: 0;
     .about-me {
       display: -webkit-box;

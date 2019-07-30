@@ -4,7 +4,9 @@
       <h1 class="heading-super font-primary">Contact Me</h1>
       <h6>
         or mail me at
-        <a href="mailto:hello@parthjawale.com">hello@parthjawale.com</a>
+        <a
+          onclick="window.location='mailto:hello@parthjawale.com'"
+        >hello@parthjawale.com</a>
       </h6>
     </div>
     <form @submit.prevent="submitForm" ref="contactForm">
@@ -80,7 +82,7 @@
       </button>
     </form>
     <div class="text-common email pt-2 wow fadeInUp" data-wow-delay="0.5s">
-      <a href="mailto:hello@parthjawale.com">
+      <a onclick="window.location='mailto:hello@parthjawale.com'">
         <span class="email-text">I prefer good old-fashioned email.</span>
       </a>
     </div>
