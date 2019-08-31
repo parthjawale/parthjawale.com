@@ -7,7 +7,7 @@
             class="heading-super font-primary wow fadeInUp"
             data-wow-duration="0.9s"
             data-wow-delay="0.6s"
-          >UX/UI, Backend Developer &amp; Chocolate Lover.</h2>
+          >UI/UX, Backend Developer &amp; Cloud Enthusiast.</h2>
         </div>
         <div class="text-common">
           <p class="wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="1.2s">
@@ -18,7 +18,7 @@
             <a class="text-link-wrapper" href="https://mext.in" target="_blank">
               <span class="text-link">Mext</span>
             </a>,
-            <span class="tooltip" data-popup="From June '18 - March '19">
+            <span class="tooltip" data-popup="June '18 - March '19">
               <span class="strikethrough">
                 Technical Lead at
                 <a
@@ -38,11 +38,17 @@
             <router-link class="text-link-wrapper" tag="a" to="/work">
               <span class="text-link">over here</span>
             </router-link>&nbsp;&nbsp;for a glimpse of my work.
+            <br />
+            <br />Here's a
+            <a class="text-link-wrapper" href="http://tiny.cc/0ry1az" target="_blank">
+              <span class="text-link">link</span>
+            </a>
+            to my resume.
           </p>
         </div>
       </div>
       <div class="about-me-image wow fadeIn" data-wow-duration="1.4s" data-wow-delay="2.3s">
-        <img src="@/assets/15391528_1549315458417528_641341452658523698_o.jpg" alt />
+        <img src="@/assets/self.jpg" alt />
       </div>
     </div>
   </section>

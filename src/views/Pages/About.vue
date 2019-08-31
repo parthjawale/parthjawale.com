@@ -35,7 +35,7 @@
         </p>
         <p>My interest in this field grew even more when I got to high school. Friends &amp; family always approached me with computer issues because they knew that I loved solving problems — especially problems that had to do with technology.</p>
         <p>
-          <em>The fact that there are limitless possibilities to the type of applications which can be fabricated as well as the robust nature of programming lanuguages is what at first allured me to the world of programming.</em>
+          <em>The fact that there are limitless possibilities to the type of applications which can be fabricated as well as the robust nature of programming languages is what at first allured me to the world of programming.</em>
         </p>
         <p>
           I was first properly introduced to a programming language - Java, when I was 15. Its intricate syntax and concepts got to me and I really enjoyed experimenting with them. I used to stay up whole nights, learning new stuff, most of it from the legendary Bucky -
@@ -157,6 +157,32 @@
 
 <script>
 import { bus } from "@/main";
+let scrollFunc = _this => {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+  var scrolled = winScroll / height;
+  if (screen.width > 768) {
+    if (winScroll / height >= 0.99) {
+      _this.scrollProgressHide = true;
+      bus.$emit("hideNavbarAndFooter");
+    } else {
+      _this.scrollProgressHide = false;
+      bus.$emit("showNavbarAndFooter");
+    }
+  } else {
+    if (winScroll / height >= 0.95) {
+      _this.scrollProgressHide = true;
+      bus.$emit("hideNavbarAndFooter");
+    } else {
+      _this.scrollProgressHide = false;
+      bus.$emit("showNavbarAndFooter");
+    }
+  }
+  _this.scaleX = scrolled;
+};
+
 export default {
   data: () => ({
     clientX: -500,
@@ -187,28 +213,7 @@ export default {
     },
     scroller() {
       let _this = this;
-      window.addEventListener("scroll", () => {
-        var winScroll =
-          document.body.scrollTop || document.documentElement.scrollTop;
-        var height =
-          document.documentElement.scrollHeight -
-          document.documentElement.clientHeight;
-        var scrolled = winScroll / height;
-        if (screen.width > 768) {
-          if (winScroll / height >= 0.99) {
-            _this.scrollProgressHide = true;
-          } else {
-            _this.scrollProgressHide = false;
-          }
-        } else {
-          if (winScroll / height >= 0.95) {
-            _this.scrollProgressHide = true;
-          } else {
-            _this.scrollProgressHide = false;
-          }
-        }
-        _this.scaleX = scrolled;
-      });
+      window.addEventListener("scroll", scrollFunc);
     },
     setGif(gif) {
       let _this = this;
@@ -219,8 +224,8 @@ export default {
       }
     }
   },
-  onDestroy() {
-    window.removeEventListener("mousemove");
+  beforeDestroy() {
+    window.removeEventListener("scroll", scrollFunc, false);
   }
 };
 </script>

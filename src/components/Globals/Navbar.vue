@@ -64,7 +64,7 @@ export default {
   data: () => {
     return {
       labelClass: "nav-toggle d-none-desktop",
-      navbarClass: "navbar b-transparent wow fadeIn",
+      navbarClass: "navbar b-primary wow fadeIn",
       linksClass: "links",
       listItemsClass: "link-hover",
       checkboxVal: false,

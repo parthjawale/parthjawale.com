@@ -108,26 +108,7 @@ export default {
     emailValid: true,
     formValid: false
   }),
-  // computed: {
-  //   validateForm() {
-  //     return this.formValid();
-  //   }
-  // },
   methods: {
-    // validateForm() {
-    //   for (let i in this.inputs) {
-    //     if (
-    //       this.inputs[i] == "" ||
-    //       this.inputs[i] == null ||
-    //       this.inputs[i] == undefined
-    //     )
-    //       this.btnActive = false;
-    //     if (i == "email") {
-    //       if (!this.validEmail(i)) return false;
-    //     }
-    //   }
-    //   this.btnActive = true;
-    // },
     validEmail(email) {
       var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       let res = re.test(email.toLowerCase().trim());

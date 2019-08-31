@@ -1,12 +1,14 @@
 <template>
   <div id="app">
     <transition name="fade">
-      <navbar v-show="dataLoaded" />
+      <navbar v-show="dataLoaded && navbarVisible" />
     </transition>
     <preloader :loaded="dataLoaded" :hideMask="!hideMask" />
     <mouse :show="showMousePointer" :hoveredLink="hoveredLink" />
     <layout />
-    <footr v-show="dataLoaded" />
+    <transition name="fade">
+      <footr v-show="dataLoaded && footerVisible" />
+    </transition>
   </div>
 </template>
 
@@ -38,7 +40,9 @@ export default {
       dataLoaded: false,
       hideMask: false,
       hoveredLink: false,
-      showMousePointer: false
+      showMousePointer: false,
+      navbarVisible: true,
+      footerVisible: true
     };
   },
   created() {
@@ -56,6 +60,14 @@ export default {
         new WOW().init();
         _this.showMousePointer = true;
       }, 900);
+    });
+    bus.$on("hideNavbarAndFooter", function() {
+      _this.navbarVisible = false;
+      _this.footerVisible = false;
+    });
+    bus.$on("showNavbarAndFooter", function() {
+      _this.navbarVisible = true;
+      _this.footerVisible = true;
     });
   }
 };
