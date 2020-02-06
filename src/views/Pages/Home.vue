@@ -9,7 +9,7 @@
             data-wow-delay="0.6s"
           >UI/UX, Backend Developer &amp; Cloud Enthusiast.</h2>
         </div>
-        <div class="text-common">
+        <div class="text-common font-secondary">
           <p class="wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="1.2s">
             Hello, I'm Parth Jawale, a Final Year engineering student studying in Manipal University, Jaipur.
             I am a web developer with extensive experience, obsessed with transforming the digital space into a more easily accessible and alluring hangout.
@@ -24,7 +24,7 @@
             <span class="tooltip" data-popup="June '18 - March '19">
               <span class="strikethrough">
                 <span class="previous-role">
-                Technical Lead at
+                Previously Technical Lead at
                 <a
                   href="https://gramiksha.in"
                   class="text-link-wrapper"

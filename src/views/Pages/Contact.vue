@@ -14,11 +14,11 @@
         <div class="input-group wow fadeInUp" data-wow-delay="0.7s">
           <label
             for="Name"
-            :class="['text-common' ,'input-label', {active: inputs.firstnameActive}]"
+            :class="['text-common font-secondary' ,'input-label', {active: inputs.firstnameActive}]"
           >First Name</label>
           <input
             autocomplete="off"
-            class="text-common"
+            class="text-common font-secondary"
             type="text"
             v-model="formData.firstname"
             placeholder="What's your first name?"
@@ -28,11 +28,11 @@
         <div class="input-group wow fadeInUp" data-wow-delay="0.9s">
           <label
             for="Name"
-            :class="['text-common' ,'input-label', {active: inputs.lastnameActive}]"
+            :class="['text-common font-secondary' ,'input-label', {active: inputs.lastnameActive}]"
           >Last Name</label>
           <input
             autocomplete="off"
-            class="text-common"
+            class="text-common font-secondary"
             type="text"
             v-model="formData.lastname"
             placeholder="What's your last name?"
@@ -42,7 +42,7 @@
         <div class="input-group wow fadeInUp" data-wow-delay="1.1s">
           <label
             for="Name"
-            :class="['text-common' ,'input-label', {active: inputs.emailActive}, {invalid: (!emailValid && formData.email != '')}]"
+            :class="['text-common font-secondary' ,'input-label', {active: inputs.emailActive}, {invalid: (!emailValid && formData.email != '')}]"
           >
             Email Address
             <i
@@ -51,7 +51,7 @@
           </label>
           <input
             autocomplete="off"
-            :class="['text-common', {invalid: (!emailValid && formData.email != '')}]"
+            :class="['text-common font-secondary', {invalid: (!emailValid && formData.email != '')}]"
             type="text"
             v-model="formData.email"
             placeholder="What's your email address?"
@@ -61,11 +61,11 @@
         <div class="input-group wow fadeInUp" data-wow-delay="1.3s">
           <label
             for="Name"
-            :class="['text-common' ,'input-label', {active: inputs.messageActive}]"
+            :class="['text-common font-secondary' ,'input-label', {active: inputs.messageActive}]"
           >Message</label>
           <textarea
             autocomplete="off"
-            class="text-common"
+            class="text-common font-secondary"
             type="text"
             rows="1"
             v-model="formData.message"
@@ -81,7 +81,11 @@
         Send
       </button>
     </form>
-    <div class="text-common email pt-2 wow fadeInUp" data-wow-delay="0.5s">
+    <br />
+      <transition name="fade">
+        <span v-if="mailSent" class="text-common font-secondary contact-message">You've sucessfully contacted me.</span>
+      </transition>
+    <div class="text-common font-secondary email pt-2 wow fadeInUp" data-wow-delay="0.5s">
       <a onclick="window.location='mailto:hello@parthjawale.com'">
         <span class="email-text">I prefer good old-fashioned email.</span>
       </a>
@@ -96,8 +100,10 @@ export default {
       firstname: "",
       lastname: "",
       email: "",
-      message: ""
+      message: "",
+      buttonText: "Send",
     },
+    mailSent: false,
     submitButtonClass: "btn-svg font-primary wow fadeInUp pointer-none",
     inputs: {
       firstnameActive: false,
@@ -137,6 +143,8 @@ export default {
         "btn-svg font-primary wow fadeInUp pointer-none loading";
       let _this = this;
       let body = {
+        firstname: this.formData.firstname,
+        lastname: this.formData.lastname,
         replyTo: this.formData.email,
         subject: `New Contact - ${this.formData.firstname} ${this.formData.lastname}`,
         body: `Name: ${this.formData.firstname} ${this.formData.lastname}<br><br>Email: ${this.formData.email}<br><br>Message: ${this.formData.message}`
@@ -167,6 +175,10 @@ export default {
             this.formValid = false;
             _this.submitButtonClass =
               "btn-svg font-primary wow fadeInUp pointer-none";
+            _this.mailSent = true;
+            setTimeout( () => {
+              _this.mailSent = false;
+              }, 1500);
           }
         });
     }

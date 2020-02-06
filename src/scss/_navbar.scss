@@ -15,7 +15,7 @@
   align-items: center;
   width: 100vw;
   padding: 1rem 0;
-  color: #fff;
+  color: $black;
   input {
     visibility: hidden;
   }
@@ -36,6 +36,7 @@
       text-decoration: none;
       outline: none;
       font-family: "Montserrat", sans-serif;
+      font-weight: 600;
       a {
         color: inherit;
         transition: color 0.7s;
@@ -108,7 +109,7 @@
       }
       .hamburger {
         height: 2px;
-        background-color: #fff;
+        background-color: $black;
         width: 16px;
         position: relative;
         -webkit-transition: all 0.2s ease;
@@ -117,7 +118,7 @@
           content: "";
           top: -6px;
           position: absolute;
-          background-color: #fff;
+          background-color: $black;
           width: 100%;
           height: 100%;
           -webkit-transition: all 0.2s ease;
@@ -127,7 +128,7 @@
           content: "";
           top: 6px;
           position: absolute;
-          background-color: #fff;
+          background-color: $black;
           width: 100%;
           -webkit-transition: all 0.2s ease;
           transition: all 0.2s ease;
@@ -144,7 +145,7 @@
           top: 0px;
         }
       }
-      outline: 1px solid #fff;
+      outline: 1px solid $black;
     }
     .links {
       position: fixed;
@@ -229,7 +230,7 @@
     position: fixed;
     bottom: 1rem;
     z-index: 10;
-    color: #fff;
+    color: $black;
     background: transparent;
     left: 0;
     -webkit-transition: opacity 0.4s ease;
@@ -261,7 +262,7 @@
         li {
           padding: 0rem 2rem;
           a {
-            color: #fff;
+            color: $black;
             text-decoration: none;
             outline: none;
           }

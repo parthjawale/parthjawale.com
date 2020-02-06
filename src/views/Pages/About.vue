@@ -14,7 +14,7 @@
           <span>Parth Jawale.</span>
         </h1>
       </div>
-      <div class="about-me-text text-common wow fadeIn" data-wow-delay="1.2s">
+      <div class="about-me-text text-common font-secondary wow fadeIn" data-wow-delay="1.2s">
         <p>I'm a full-stack web developer, inclined towards the backend and cloud services.</p>
         <article>TL;DR: An effectual UI/UX beautifies and streamlines things, creating something equal parts easy and fun to use. My eternal goal is creating that something.</article>
         <p>
@@ -44,7 +44,7 @@
             class="text-link-wrapper"
             target="_blank"
           >
-            <span class="text-link">TheNewBoston</span>
+            <span class="text-link">TheNewBoston</span> <i class="fas fa-external-link-alt fa-1x" style="font-size:1.2rem;"></i>
           </a> (not Captain America's
           <a
             class="text-link-wrapper"
@@ -73,12 +73,12 @@
           <b>P.S:</b> I'm a final year Bachelor of Technology (B.Tech) student at
           <br />
           <a href="https://jaipur.manipal.edu" target="_blank" class="text-link-wrapper">
-            <span class="text-link">Manipal University Jaipur</span>
+            <span class="text-link">Manipal University Jaipur</span> <i class="fas fa-external-link-alt fa-1x" style="font-size:1.2rem;"></i>
           </a>, majoring in Computer Science.
         </p>
         <p>
           I'm currently interning at <a href="https://logmeininc.com" target="_blank" class="text-link-wrapper">
-            <span class="text-link">LogMeIn Inc.</span>
+            <span class="text-link">LogMeIn Inc.</span> <i class="fas fa-external-link-alt fa-1x" style="font-size:1.2rem;"></i>
           </a> in Bangalore.
           <br>
           Nowadays, one can find me exploring Bangalore and trying to learn Kannada (unsuccessfully).
@@ -140,19 +140,19 @@
       </div>
       <div class="further">
         <div class="further-work">
-          <h1 class="heading-super font-primary">
+          <h1 class="heading-super font-quad">
             Looking for my work?
             <br />
             <h4>Hope you like it!</h4>
-            <router-link tag="button" to="/work">See Work</router-link>
+            <router-link class="font-secondary" tag="button" to="/work">See Work</router-link>
           </h1>
         </div>
         <div class="further-contact">
-          <h1 class="heading-super font-primary">
+          <h1 class="heading-super font-quad">
             Want to hire me or work with me?
             <br />
             <h4>or have a really cool suggestion for a novel?</h4>
-            <router-link tag="button" to="/contact">Contact Me</router-link>
+            <router-link tag="button" class="font-secondary" to="/contact">Contact Me</router-link>
           </h1>
         </div>
       </div>
@@ -218,7 +218,7 @@ export default {
     },
     scroller() {
       let _this = this;
-      window.addEventListener("scroll", scrollFunc);
+      window.addEventListener("scroll", scrollFunc, true);
     },
     setGif(gif) {
       let _this = this;

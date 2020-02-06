@@ -22,11 +22,11 @@
   }
   .scroll-reminder {
     a {
-      color: $white;
+      color: $black;
       outline: none;
       text-decoration: none;
     }
-    color: $white;
+    color: $black;
     font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -116,8 +116,7 @@
     .work-heading {
       padding-top: 1rem;
       padding-bottom: 0;
-      color: $white;
-      font-family: "Nunito", sans-serif;
+      color: $black;
       font-weight: 600;
       margin: 0;
       font-size: 3rem;
@@ -129,7 +128,7 @@
       margin: 0 auto;
       width: 100%;
       padding: 0 0.5rem;
-      // border: 1px solid $white;
+      // border: 1px solid $black;
       margin: 2rem auto;
       &:not(:last-child) {
         margin-bottom: 4rem;
@@ -146,7 +145,7 @@
         }
       }
       p {
-        color: $white;
+        color: $black;
         font-size: 1.2rem;
       }
     }

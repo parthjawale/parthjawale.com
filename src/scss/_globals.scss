@@ -1,9 +1,20 @@
-$backcolor: #00203fff;
-$inputbackcolor: #24415e;
-$primary: #adefd1ff;
+// $backcolor: #00203fff;
+$backcolor: #f7f8f3;
+$inputbackcolor: #addcca;
+// $primary: #adefd1ff;
+$primary: #f00;
+$tertiary: #2c3d63;
 $secondary: rgb(241, 50, 50);
 $white: #fff;
 $black: #000;
+// $linkcolor: rgb(44, 204, 169);
+// $linkcolor: #ff6f5e;
+$linkcolor: #2c3d63;
+// $emphasis: rgb(202, 202, 133);
+// $emphasis: #2c3d63;
+$emphasis: #f00;
+$inputplaceholder: rgba(144, 144, 144, 0.5);
+$inputlabelinvalid: rgb(230, 54, 54);
 
 @import "preloader";
 @import "mouse";
@@ -112,7 +123,7 @@ html.nav-open main {
 .heading {
   &-super {
     font-size: 4rem;
-    color: $primary;
+    color: $emphasis;
     font-weight: 500;
   }
   @media screen and (max-width: 768px) {
@@ -123,23 +134,24 @@ html.nav-open main {
 }
 .font {
   &-primary {
-    font-family: "Rufina", sans-serif;
+    font-family: "Libre Baskerville", sans-serif;
   }
   &-secondary {
-    font-family: "Nunito", sans-serif;
+    font-family: "Quicksand", sans-serif;
   }
   &-tertiary {
     font-family: "Montserrat", sans-serif;
+  }
+  &-quad {
+    font-family: "Rufina", sans-serif;
   }
 }
 
 .text {
   &-common {
-    color: #fff;
+    color: $black;
     padding: 1rem 0;
-    // font-family: "Montserrat", sans-serif;
-    font-family: "Nunito", serif;
-    font-weight: 200;
+    font-weight: 400;
     line-height: 1.5;
     font-size: 1.35rem;
     em {
@@ -147,7 +159,7 @@ html.nav-open main {
       font-style: normal;
       font-weight: 400;
       font-size: 1.6rem;
-      color: rgb(202, 202, 133);
+      color: $emphasis;
       position: relative;
       padding-left: 2rem;
       &:before {
@@ -158,7 +170,7 @@ html.nav-open main {
         top: 50%;
         -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
-        background-color: rgb(202, 202, 133);
+        background-color: $emphasis;
         width: 10px;
       }
     }
@@ -729,7 +741,7 @@ body.o-hidden {
   .link-hover a span {
     position: relative;
     display: inline-block;
-    color: #fff;
+    color: $black;
     -webkit-transition: -webkit-transform 0.3s;
     transition: -webkit-transform 0.3s;
     transition: transform 0.3s;
@@ -772,7 +784,7 @@ body.o-hidden {
   outline: none;
   background: rgba(0, 0, 0, 0.3);
   padding: 1.4rem 2rem;
-  color: $white;
+  color: $black;
   position: relative;
   -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
@@ -781,12 +793,12 @@ body.o-hidden {
 .btn-large.active {
   background: transparent;
   // cursor: pointer;
-  border: 1px solid $white;
+  border: 1px solid $black;
   color: $primary;
   &:hover {
     background: rgba(255, 255, 255, 0.8);
     color: $black;
-    border: 1px solid $white;
+    border: 1px solid $black;
   }
 }
 
@@ -794,7 +806,7 @@ a.text-link-wrapper {
   position: relative;
   // cursor: pointer;
   text-decoration: none;
-  color: rgb(44, 204, 169);
+  color: $linkcolor;
   display: inline-flex;
   align-items: center;
   font-weight: 600;
@@ -818,20 +830,25 @@ a.text-link-wrapper {
     // z-index: 1;
     height: 5px;
     width: 100%;
-    background: rgba(255, 255, 255, 0.5);
+    background: #addcca;
   }
   &:hover:before {
     top: 0;
     height: 100%;
   }
   &:hover .text-link {
-    color: $white;
+    color: $black;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   &:hover i {
-    color: $white;
+    color: $black;
   }
+}
+
+.fas,
+.fab {
+  z-index: 1;
 }
 
 @media screen and(min-width:768px) {
@@ -846,7 +863,7 @@ a.text-link-wrapper {
       border-radius: 5px;
       width: 98%;
       left: 50%;
-      background-color: rgba(255, 255, 255, 0.7);
+      // background-color: ;
       top: 50%;
       -webkit-transform: translate(-50%, -50%) scaleX(1);
       transform: translate(-50%, -50%) scaleX(1);
@@ -872,10 +889,11 @@ span.tooltip {
     -webkit-transform: translate(-50%, calc(-50% + 10px));
     transform: translate(-50%, calc(-50% + 10px));
     display: inline-block;
+    font-weight: 600;
     width: max-content;
     color: $black;
     bottom: auto;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: $white;
     font-size: 0.8rem;
     font-family: "Montserrat", sans-serif;
     padding: 0.3rem 0.3rem;
@@ -897,7 +915,7 @@ span.tooltip {
     transform: translate(-50%, calc(-50% + 25px)) rotate(45deg);
     width: 5px;
     height: 5px;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: $white;
     opacity: 0;
     -webkit-transition: 0.3s ease;
     transition: 0.3s ease;
