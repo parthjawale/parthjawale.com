@@ -34,4 +34,9 @@
       }
     }
   }
+  .previous-role {
+    &::after {
+      content: " (June '18 - March '19)";
+    }
+  }
 }

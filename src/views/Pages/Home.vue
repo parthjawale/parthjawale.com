@@ -1,6 +1,6 @@
 <template>
   <section id="home-page" class="full-page-desktop b-primary content-wrapper pb-5-mobile">
-    <div class="about-me">
+    <div class="about-me navbar-fix">
       <div class="about-me-text">
         <div class="main-heading-wrapper">
           <h2
@@ -14,12 +14,16 @@
             Hello, I'm Parth Jawale, a Final Year engineering student studying in Manipal University, Jaipur.
             I am a web developer with extensive experience, obsessed with transforming the digital space into a more easily accessible and alluring hangout.
             <br />
+            <br /> Currently interning at <a class="text-link-wrapper" href="https://logmeininc.com" target="_blank">
+              <span class="text-link">LogMeIn Inc.</span>
+            </a>
             <br />Co-Founder at
             <a class="text-link-wrapper" href="https://mext.in" target="_blank">
               <span class="text-link">Mext</span>
             </a>,
             <span class="tooltip" data-popup="June '18 - March '19">
               <span class="strikethrough">
+                <span class="previous-role">
                 Technical Lead at
                 <a
                   href="https://gramiksha.in"
@@ -28,6 +32,7 @@
                 >
                   <span class="text-link">Gramiksha</span>
                 </a>.
+                </span>
               </span>
             </span>
             <br />

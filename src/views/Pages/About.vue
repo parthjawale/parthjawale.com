@@ -77,19 +77,24 @@
           </a>, majoring in Computer Science.
         </p>
         <p>
-          Nowadays, one can find me in my college room, either reading a book or working on projects. And
-          eating, of course.
+          I'm currently interning at <a href="https://logmeininc.com" target="_blank" class="text-link-wrapper">
+            <span class="text-link">LogMeIn Inc.</span>
+          </a> in Bangalore.
+          <br>
+          Nowadays, one can find me exploring Bangalore and trying to learn Kannada (unsuccessfully).
         </p>
         <p>
           <b class="heading">Skills</b>
           <br />
-          <b>Web Development</b>
+          <b>Development</b>
           <br />- Front End: HTML, CSS, JavaScript, SASS, SCSS
           <br />- Back End: PHP, NodeJS
-          <br />- Libraries & Frameworks: Bootstrap, VueJS, Vuetify, Vuex, Vuefire
+          <br />- Libraries &amp; Frameworks: Bootstrap, VueJS, Vuetify, Vuex, Vuefire
           <br />- Databases: Firebase, MySQL, MongoDB
           <br />- DNS Management
           <br />- Docker
+          <br />- Flutter
+          <br />- Unity
           <br />
           <b>Server Administration</b>
           <br />- Apache
