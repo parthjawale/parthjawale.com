@@ -90,6 +90,9 @@ export default {
     buttonActive: true,
     endOfPage: false
   }),
+  mounted () {
+    window.addEventListener('scroll',() => {}, true);
+  },
   methods: {
     handleScroll(event) {
       this.pageYOffset = window.pageYOffset;

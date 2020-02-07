@@ -1,7 +1,7 @@
 <template>
   <section id="home-page" class="full-page-desktop b-primary content-wrapper pb-5-mobile">
-    <div class="about-me navbar-fix">
-      <div class="about-me-text">
+    <div class="about-me">
+      <div class="about-me-text navbar-fix">
         <div class="main-heading-wrapper">
           <h2
             class="heading-super font-primary wow fadeInUp"
@@ -53,7 +53,7 @@
         </div>
       </div>
       <div class="about-me-image wow fadeIn" data-wow-duration="1.4s" data-wow-delay="2.3s">
-        <img src="@/assets/self.jpg" alt />
+        <img src="@/assets/Me.jpg" alt />
       </div>
     </div>
   </section>
