@@ -8,14 +8,10 @@
 </template>
 
 <script>
-import Backmask from "@/components/Globals/Backmask";
 import { bus } from "@/main";
 import { setTimeout } from "timers";
 export default {
   props: ["loaded", "hideMask"],
-  components: {
-    backmask: Backmask
-  },
   data() {
     return {
       preloadDone: false,
@@ -30,14 +26,10 @@ export default {
           this.preloadDone = true;
         }, 1500);
         setTimeout(() => {
-          if (screen.width > 768) {
-            document.body.classList += "loaded";
-          } else {
-            document.body.classList += "loaded";
-          }
+          document.body.classList += "loaded";
         }, 700);
         setTimeout(function() {
-          this.backmaskClass = bus.$emit("backmask-clip-start");
+          bus.$emit("backmask-clip-start");
         }, 700);
       }
     }
