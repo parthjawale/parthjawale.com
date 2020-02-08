@@ -3,6 +3,7 @@ $inputbackcolor: #addcca;
 $primary: #f00;
 $tertiary: #2c3d63;
 $secondary: rgb(241, 50, 50);
+$preloaderBackground: #addcca;
 $white: #fff;
 $black: #000;
 $linkcolor: #2c3d63;
@@ -87,7 +88,6 @@ html.nav-open main {
   transition: width 1.5s cubic-bezier(0.86, 0, 0.07, 1),
     height 1.5s cubic-bezier(0.86, 0, 0.07, 1);
   -webkit-transform: translate(-50%, -50%);
-  transition: background 0.8s ease-in;
   transform: translate(-50%, -50%);
 }
 @media screen and (max-width: 768px) {
