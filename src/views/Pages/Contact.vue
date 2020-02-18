@@ -1,12 +1,14 @@
 <template>
-  <div class="contact-me px-2-desktop px-1-mobile pt-5 pb-5-desktop pb-5-mobile b-primary">
+  <div
+    class="contact-me px-2-desktop px-1-mobile pt-5 pb-5-desktop pb-5-mobile b-primary"
+  >
     <div class="heading wow fadeIn" data-wow-delay="0.5s">
       <h1 class="heading-super font-primary">Contact Me</h1>
       <h6>
         or mail me at
-        <a
-          onclick="window.location='mailto:hello@parthjawale.com'"
-        >hello@parthjawale.com</a>
+        <a onclick="window.location='mailto:hello@parthjawale.com'"
+          >hello@parthjawale.com</a
+        >
       </h6>
     </div>
     <form @submit.prevent="submitForm" ref="contactForm">
@@ -14,8 +16,13 @@
         <div class="input-group wow fadeInUp" data-wow-delay="0.7s">
           <label
             for="Name"
-            :class="['text-common font-secondary' ,'input-label', {active: inputs.firstnameActive}]"
-          >First Name</label>
+            :class="[
+              'text-common font-secondary',
+              'input-label',
+              { active: inputs.firstnameActive }
+            ]"
+            >First Name</label
+          >
           <input
             autocomplete="off"
             class="text-common font-secondary"
@@ -28,8 +35,13 @@
         <div class="input-group wow fadeInUp" data-wow-delay="0.9s">
           <label
             for="Name"
-            :class="['text-common font-secondary' ,'input-label', {active: inputs.lastnameActive}]"
-          >Last Name</label>
+            :class="[
+              'text-common font-secondary',
+              'input-label',
+              { active: inputs.lastnameActive }
+            ]"
+            >Last Name</label
+          >
           <input
             autocomplete="off"
             class="text-common font-secondary"
@@ -42,16 +54,28 @@
         <div class="input-group wow fadeInUp" data-wow-delay="1.1s">
           <label
             for="Name"
-            :class="['text-common font-secondary' ,'input-label', {active: inputs.emailActive}, {invalid: (!emailValid && formData.email != '')}]"
+            :class="[
+              'text-common font-secondary',
+              'input-label',
+              { active: inputs.emailActive },
+              { invalid: !emailValid && formData.email != '' }
+            ]"
           >
             Email Address
             <i
-              :class="['fas' ,'fa-exclamation-circle', {invalid: (!emailValid && formData.email != '')}]"
+              :class="[
+                'fas',
+                'fa-exclamation-circle',
+                { invalid: !emailValid && formData.email != '' }
+              ]"
             ></i>
           </label>
           <input
             autocomplete="off"
-            :class="['text-common font-secondary', {invalid: (!emailValid && formData.email != '')}]"
+            :class="[
+              'text-common font-secondary',
+              { invalid: !emailValid && formData.email != '' }
+            ]"
             type="text"
             v-model="formData.email"
             placeholder="What's your email address?"
@@ -61,8 +85,13 @@
         <div class="input-group wow fadeInUp" data-wow-delay="1.3s">
           <label
             for="Name"
-            :class="['text-common font-secondary' ,'input-label', {active: inputs.messageActive}]"
-          >Message</label>
+            :class="[
+              'text-common font-secondary',
+              'input-label',
+              { active: inputs.messageActive }
+            ]"
+            >Message</label
+          >
           <textarea
             autocomplete="off"
             class="text-common font-secondary"
@@ -74,7 +103,12 @@
           />
         </div>
       </div>
-      <button type="submit" id="contactFormButton" :class="submitButtonClass" data-wow-delay="0.3s">
+      <button
+        type="submit"
+        id="contactFormButton"
+        :class="submitButtonClass"
+        data-wow-delay="0.3s"
+      >
         <svg>
           <rect />
         </svg>
@@ -82,10 +116,15 @@
       </button>
     </form>
     <br />
-      <transition name="fade">
-        <span v-if="mailSent" class="text-common font-secondary contact-message">You've sucessfully contacted me.</span>
-      </transition>
-    <div class="text-common font-secondary email pt-2 wow fadeInUp" data-wow-delay="0.5s">
+    <transition name="fade">
+      <span v-if="mailSent" class="text-common font-secondary contact-message"
+        >You've sucessfully contacted me.</span
+      >
+    </transition>
+    <div
+      class="text-common font-secondary email pt-2 wow fadeInUp"
+      data-wow-delay="0.5s"
+    >
       <a onclick="window.location='mailto:hello@parthjawale.com'">
         <span class="email-text">I prefer good old-fashioned email.</span>
       </a>
@@ -94,15 +133,44 @@
 </template>
 
 <script>
+var AWS = require("aws-sdk");
+
 export default {
+  created() {
+    this.loading = true;
+    var _this = this;
+    var params = {
+      Name: "/APIKeys/MailSenderAPIKey"
+    };
+    AWS.config.credentials = new AWS.EC2MetadataCredentials({
+      httpOptions: { timeout: 5000 }, // 5 second timeout
+      maxRetries: 10, // retry 10 times
+      retryDelayOptions: { base: 200 } // see AWS.Config for information
+    });
+
+    var ssm = new AWS.SSM({
+      accessKeyId: AWS.config.credentials.accessKeyId,
+      secretAccessKey: AWS.config.credentials.secretAccessKey,
+      region: "ap-south-1"
+    });
+    ssm.getParameter(params, (err, data) => {
+      if (err) console.log(err);
+      else {
+        _this.apiKey = data.Parameter.Value;
+        _this.loading = false;
+      }
+    });
+  },
   data: () => ({
     formData: {
       firstname: "",
       lastname: "",
       email: "",
       message: "",
-      buttonText: "Send",
+      buttonText: "Send"
     },
+    apiKey: "",
+    loading: false,
     mailSent: false,
     submitButtonClass: "btn-svg font-primary wow fadeInUp pointer-none",
     inputs: {
@@ -139,6 +207,7 @@ export default {
       }
     },
     submitForm() {
+      if (this.loading) return;
       this.submitButtonClass =
         "btn-svg font-primary wow fadeInUp pointer-none loading";
       let _this = this;
@@ -149,14 +218,17 @@ export default {
         subject: `New Contact - ${this.formData.firstname} ${this.formData.lastname}`,
         body: `Name: ${this.formData.firstname} ${this.formData.lastname}<br><br>Email: ${this.formData.email}<br><br>Message: ${this.formData.message}`
       };
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+      myHeaders.append("x-api-key", _this.apiKey);
+      myHeaders.append("Origin", "http://localhost:8080");
       fetch(
-        "https://ox3l8mqk6l.execute-api.ap-south-1.amazonaws.com/api/sendmail",
+        "https://ox3l8mqk6l.execute-api.ap-south-1.amazonaws.com/dev/mailsender",
         {
           method: "POST",
+          headers: myHeaders,
           body: JSON.stringify(body),
-          headers: {
-            "Access-Control-Allow-Origin": "*"
-          }
+          redirect: "follow"
         }
       )
         .then(res => {
@@ -176,9 +248,9 @@ export default {
             _this.submitButtonClass =
               "btn-svg font-primary wow fadeInUp pointer-none";
             _this.mailSent = true;
-            setTimeout( () => {
+            setTimeout(() => {
               _this.mailSent = false;
-              }, 1500);
+            }, 1500);
           }
         });
     }
