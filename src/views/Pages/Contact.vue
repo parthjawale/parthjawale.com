@@ -133,33 +133,9 @@
 </template>
 
 <script>
-var AWS = require("aws-sdk");
-
 export default {
   created() {
-    this.loading = true;
     var _this = this;
-    var params = {
-      Name: "/APIKeys/MailSenderAPIKey"
-    };
-    AWS.config.credentials = new AWS.EC2MetadataCredentials({
-      httpOptions: { timeout: 5000 }, // 5 second timeout
-      maxRetries: 10, // retry 10 times
-      retryDelayOptions: { base: 200 } // see AWS.Config for information
-    });
-
-    var ssm = new AWS.SSM({
-      accessKeyId: AWS.config.credentials.accessKeyId,
-      secretAccessKey: AWS.config.credentials.secretAccessKey,
-      region: "ap-south-1"
-    });
-    ssm.getParameter(params, (err, data) => {
-      if (err) console.log(err);
-      else {
-        _this.apiKey = data.Parameter.Value;
-        _this.loading = false;
-      }
-    });
   },
   data: () => ({
     formData: {
@@ -169,7 +145,7 @@ export default {
       message: "",
       buttonText: "Send"
     },
-    apiKey: "",
+    apiKey: "ÞdÂHæÖaÛ¢~ó· =â¯Suj÷ø;8ð",
     loading: false,
     mailSent: false,
     submitButtonClass: "btn-svg font-primary wow fadeInUp pointer-none",
@@ -220,10 +196,10 @@ export default {
       };
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
-      myHeaders.append("x-api-key", _this.apiKey);
-      myHeaders.append("Origin", "http://localhost:8080");
+      myHeaders.append("x-api-key", btoa(_this.apiKey));
+      // myHeaders.append("Origin", "https://parthjawa;");
       fetch(
-        "https://ox3l8mqk6l.execute-api.ap-south-1.amazonaws.com/dev/mailsender",
+        "https://ox3l8mqk6l.execute-api.ap-south-1.amazonaws.com/api/mailsender",
         {
           method: "POST",
           headers: myHeaders,
