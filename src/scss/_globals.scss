@@ -1,17 +1,12 @@
-// $backcolor: #00203fff;
 $backcolor: #f7f8f3;
 $inputbackcolor: #addcca;
-// $primary: #adefd1ff;
 $primary: #f00;
 $tertiary: #2c3d63;
 $secondary: rgb(241, 50, 50);
+$preloaderBackground: #addcca;
 $white: #fff;
 $black: #000;
-// $linkcolor: rgb(44, 204, 169);
-// $linkcolor: #ff6f5e;
 $linkcolor: #2c3d63;
-// $emphasis: rgb(202, 202, 133);
-// $emphasis: #2c3d63;
 $emphasis: #f00;
 $inputplaceholder: rgba(144, 144, 144, 0.5);
 $inputlabelinvalid: rgb(230, 54, 54);
@@ -82,7 +77,6 @@ html.nav-open main {
 // Backmask - Border-Radius
 
 .backmask {
-  background: $backcolor;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -189,6 +183,9 @@ html.nav-open main {
 
 .b-primary {
   background-color: $backcolor;
+}
+.b-white {
+  background-color: #fff;
 }
 .b-transparent {
   background: transparent;

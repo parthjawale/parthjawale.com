@@ -19,7 +19,6 @@
 <script>
 import { bus } from "@/main";
 import WOW from "wow.js";
-import Backmask from "@/components/Globals/Backmask";
 import Preloader from "@/components/Globals/Preloader";
 import Navbar from "@/components/Globals/Navbar";
 import MousePointer from "@/components/Globals/MousePointer";
@@ -28,7 +27,6 @@ import Footer from "@/components/Globals/Footer";
 
 export default {
   components: {
-    backmask: Backmask,
     preloader: Preloader,
     navbar: Navbar,
     mouse: MousePointer,

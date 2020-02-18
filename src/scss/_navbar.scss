@@ -1,3 +1,6 @@
+$mobileNavbarOpenLinks: $black;
+$mobileNavbarClosedLinks: $black;
+
 .navbar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -42,7 +45,7 @@
         transition: color 0.7s;
         @media screen and (min-width: 768px) {
           &:hover {
-            color: $primary;
+            color: $secondary;
           }
         }
       }
@@ -77,6 +80,7 @@
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    color: $mobileNavbarClosedLinks;
     .home-link {
       z-index: 5;
       width: 60%;
@@ -109,7 +113,7 @@
       }
       .hamburger {
         height: 2px;
-        background-color: $black;
+        background-color: $mobileNavbarClosedLinks;
         width: 16px;
         position: relative;
         -webkit-transition: all 0.2s ease;
@@ -118,7 +122,7 @@
           content: "";
           top: -6px;
           position: absolute;
-          background-color: $black;
+          background-color: $mobileNavbarClosedLinks;
           width: 100%;
           height: 100%;
           -webkit-transition: all 0.2s ease;
@@ -128,7 +132,7 @@
           content: "";
           top: 6px;
           position: absolute;
-          background-color: $black;
+          background-color: $mobileNavbarClosedLinks;
           width: 100%;
           -webkit-transition: all 0.2s ease;
           transition: all 0.2s ease;
@@ -138,14 +142,17 @@
     }
     input:checked + label {
       .hamburger {
+        background-color: $mobileNavbarOpenLinks;
         &:before {
           top: 0px;
+          background-color: $mobileNavbarOpenLinks;
         }
         &:after {
           top: 0px;
+          background-color: $mobileNavbarOpenLinks;
         }
       }
-      outline: 1px solid $black;
+      outline: 1px solid $mobileNavbarOpenLinks;
     }
     .links {
       position: fixed;
@@ -157,7 +164,7 @@
       opacity: 0;
       top: 0;
       left: 0;
-      background-color: $secondary;
+      background-color: $preloaderBackground;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -225,12 +232,15 @@
       transform: initial !important;
     }
   }
+  .navbar-open-nav {
+    color: $mobileNavbarOpenLinks;
+  }
   .footer-social {
     display: inline-block;
     position: fixed;
     bottom: 1rem;
     z-index: 10;
-    color: $black;
+    color: $mobileNavbarClosedLinks;
     background: transparent;
     left: 0;
     -webkit-transition: opacity 0.4s ease;
@@ -262,7 +272,7 @@
         li {
           padding: 0rem 2rem;
           a {
-            color: $black;
+            color: $mobileNavbarOpenLinks;
             text-decoration: none;
             outline: none;
           }
