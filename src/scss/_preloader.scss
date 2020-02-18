@@ -1,5 +1,5 @@
 .preload-screen {
-  background-color: $secondary;
+  background-color: $preloaderBackground;
   position: fixed;
   top: 0;
   left: 0;
@@ -9,7 +9,7 @@
     height: 90px;
     border-radius: 100%;
     border: 1px solid transparent;
-    border-top: 1px solid #fff;
+    border-top: 1px solid $black;
     position: absolute;
     top: 0;
     left: 0;

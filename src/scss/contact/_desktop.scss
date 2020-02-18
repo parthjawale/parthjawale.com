@@ -1,18 +1,19 @@
 .contact-me {
   .heading {
     h6 {
-      color: rgba(255, 255, 255, 0.2);
+      color: $black;
+      opacity: 0.5;
       font-family: "Montserrat", sans-serif;
-      font-weight: 700;
+      font-weight: 600;
       font-size: 1.6rem;
       padding: 1rem 0;
       a {
         outline: none;
         border: none;
         color: inherit;
-        transition: 0.4s color ease;
+        transition: 0.4s opacity ease;
         &:hover {
-          color: rgba(255, 255, 255, 0.3);
+          opacity: 0.8;
         }
       }
     }
@@ -43,7 +44,7 @@
         background-color: $inputbackcolor;
       }
       label.invalid {
-        color: rgb(230, 54, 54);
+        color: $inputlabelinvalid;
         vertical-align: middle;
       }
       i.invalid {
@@ -58,24 +59,24 @@
         resize: none;
         padding: 0.6rem 0;
         // border-radius: 10px;
-        color: white;
+        color: $black;
         max-width: 50%;
         min-width: 50%;
         &::-webkit-input-placeholder {
           font-family: "Montserrat", sans-serif;
-          color: rgba(144, 144, 144, 0.5);
+          color: $inputplaceholder;
         }
         &:-ms-input-placeholder {
           font-family: "Montserrat", sans-serif;
-          color: rgba(144, 144, 144, 0.5);
+          color: $inputplaceholder;
         }
         &::-ms-input-placeholder {
           font-family: "Montserrat", sans-serif;
-          color: rgba(144, 144, 144, 0.5);
+          color: $inputplaceholder;
         }
         &::placeholder {
           font-family: "Montserrat", sans-serif;
-          color: rgba(144, 144, 144, 0.5);
+          color: $inputplaceholder;
         }
       }
     }
@@ -86,7 +87,7 @@
     a {
       position: relative;
       // cursor: pointer;
-      color: $white;
+      color: $black;
       text-decoration: none;
       outline: none;
       padding: 0.3rem 0.2rem;
@@ -126,7 +127,7 @@
     border: none;
     outline: none;
     background: rgba(0, 0, 0, 0.3);
-    color: $white;
+    color: $black;
     position: relative;
     height: 80px;
     width: 100px;
@@ -140,9 +141,13 @@
       fill: transparent;
     }
   }
+  .contact-message {
+    color: $tertiary;
+  }
   .btn-svg.active {
+    background: #addcca;
     svg rect {
-      stroke: $white;
+      stroke: #ff6f5e;
       stroke-width: 4;
       stroke-dasharray: 360;
       stroke-dashoffset: 0;
@@ -155,7 +160,7 @@
   .btn-svg.loading {
     pointer-events: none;
     svg rect {
-      stroke: $white;
+      stroke: #ff6f5e;
       stroke-width: 4;
       stroke-dasharray: 360;
       stroke-dashoffset: 0;
