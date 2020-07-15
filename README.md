@@ -8,6 +8,8 @@ This site has been created using VueJS and WOW.JS.
 
 P.S: This is still a work in progress.
 
+Inspired by http://cata.design/
+
 ## Project setup
 
 ```
