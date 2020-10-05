@@ -146,7 +146,7 @@
           >, majoring in Computer Science.
         </p>
         <p>
-          I'm currently interning at
+          I previously interned at
           <a
             href="https://logmeininc.com"
             target="_blank"
@@ -240,7 +240,7 @@
 
 <script>
 import { bus } from "@/main";
-let scrollFunc = _this => {
+let scrollFunc = (_this) => {
   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   var height =
     document.documentElement.scrollHeight -
@@ -276,7 +276,7 @@ export default {
     gifStyle: "top:-500px;left:-500px",
     gifWidth: 360,
     scaleX: 0,
-    scrollProgressHide: false
+    scrollProgressHide: false,
   }),
   mounted() {
     this.gifDivMover();
@@ -285,7 +285,7 @@ export default {
   methods: {
     gifDivMover() {
       let _this = this;
-      window.addEventListener("mousemove", e => {
+      window.addEventListener("mousemove", (e) => {
         if (screen.width > 768) {
           _this.gifStyle = `top:${e.pageY}px;left:${e.pageX}px`;
         } else {
@@ -305,10 +305,10 @@ export default {
         if (gif == "bestFriend") _this.bestFriend = true;
         if (gif == "ironMan") _this.ironMan = true;
       }
-    }
+    },
   },
   beforeDestroy() {
     window.removeEventListener("scroll", () => {}, true);
-  }
+  },
 };
 </script>
