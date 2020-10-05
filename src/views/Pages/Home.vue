@@ -42,8 +42,8 @@
               <span class="text-link">LogMeIn Inc.</span> </a
             >, -->
             <br />Co-Founder at
-            <a class="text-link-wrapper" href="https://mext.in" target="_blank">
-              <span class="text-link">Mext</span> </a
+            <router-link tag="a" class="text-link-wrapper" to="/work/mext">
+              <span class="text-link">Mext</span> </router-link
             >,
             <span class="tooltip" data-popup="June '18 - March '19">
               <span class="strikethrough">
